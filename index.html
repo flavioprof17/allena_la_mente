@@ -1,0 +1,3673 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allena la mente · allenamento cognitivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Soft warm palette */
+  --cream: #FAF5ED;
+  --cream-deep: #F2EBDD;
+  --cream-deeper: #E8DEC9;
+  --ink: #3D3328;
+  --ink-soft: #6B5D4F;
+  --ink-faint: #A89A8A;
+
+  --rose: #F4C2C2;
+  --rose-deep: #E89B9B;
+  --mint: #C5E1C5;
+  --mint-deep: #95C295;
+  --sky: #BFD6E8;
+  --sky-deep: #8FB4D0;
+  --peach: #F5CFA8;
+  --peach-deep: #E8AC7A;
+  --lavender: #D9C9E8;
+  --lavender-deep: #B498D0;
+  --butter: #F5E4A8;
+
+  --terracotta: #C97862;
+  --gold: #D4A574;
+  --leaf: #7FA37F;
+
+  --shadow-soft: 0 4px 18px rgba(61, 51, 40, 0.06), 0 1px 3px rgba(61, 51, 40, 0.04);
+  --shadow-lift: 0 14px 36px rgba(61, 51, 40, 0.10), 0 2px 6px rgba(61, 51, 40, 0.05);
+  --shadow-deep: 0 28px 64px rgba(61, 51, 40, 0.16), 0 4px 14px rgba(61, 51, 40, 0.06);
+
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-pill: 999px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body::before, body::after {
+  content: '';
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: 0;
+}
+body::before {
+  width: 460px; height: 460px;
+  background: var(--rose);
+  top: -180px; left: -120px;
+  opacity: 0.22;
+}
+body::after {
+  width: 540px; height: 540px;
+  background: var(--mint);
+  bottom: -220px; right: -160px;
+  opacity: 0.18;
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 28px 80px;
+}
+
+/* HEADER */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 50px; height: 50px;
+  background: linear-gradient(135deg, var(--cream-deep), white);
+  border-radius: 16px;
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.brand-name {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.brand-sub {
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  font-weight: 700;
+}
+
+.header-tools {
+  display: flex; gap: 10px; align-items: center;
+}
+
+.child-pill {
+  background: white;
+  padding: 10px 18px;
+  border-radius: var(--r-pill);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+  display: flex; align-items: center; gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--cream-deep);
+  box-shadow: var(--shadow-soft);
+}
+.child-pill:hover { transform: translateY(-1px); box-shadow: var(--shadow-lift); }
+.child-pill .avatar {
+  width: 22px; height: 22px;
+  background: linear-gradient(135deg, var(--peach), var(--rose));
+  border-radius: 50%;
+}
+
+.icon-btn {
+  width: 44px; height: 44px;
+  background: white;
+  border-radius: 14px;
+  display: grid; place-items: center;
+  cursor: pointer;
+  border: 1px solid var(--cream-deep);
+  transition: all 0.2s;
+}
+.icon-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-soft); }
+
+/* DASHBOARD INTRO */
+.dashboard-intro {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+  align-items: end;
+}
+
+.greeting h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.greeting h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--terracotta);
+}
+
+.greeting p {
+  margin-top: 18px;
+  font-size: 16px;
+  color: var(--ink-soft);
+  max-width: 460px;
+  line-height: 1.6;
+}
+
+.streak-card {
+  background: white;
+  border-radius: var(--r-lg);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  border: 1px solid rgba(232, 222, 201, 0.6);
+}
+
+.streak-stat {
+  padding: 0 14px;
+  position: relative;
+}
+.streak-stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 6px; bottom: 6px;
+  width: 1px;
+  background: var(--cream-deep);
+}
+.streak-stat:first-child { padding-left: 0; }
+.streak-stat:last-child { padding-right: 0; }
+
+.streak-stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  font-weight: 700;
+}
+.streak-stat-value {
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+  margin-top: 6px;
+  letter-spacing: -0.02em;
+}
+
+/* SECTION LABEL */
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 700;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--cream-deep);
+}
+
+/* MAP / EXERCISES */
+.exercises-map {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+}
+
+.exercise-card {
+  background: white;
+  border-radius: var(--r-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(232, 222, 201, 0.5);
+}
+.exercise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lift);
+}
+.exercise-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: var(--card-color, var(--rose-deep));
+}
+
+.ex-icon {
+  width: 88px; height: 88px;
+  background: var(--card-tint);
+  border-radius: 22px;
+  display: grid; place-items: center;
+  margin-bottom: 22px;
+}
+
+.exercise-card h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.ex-desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  line-height: 1.5;
+  height: 38px;
+}
+
+.ex-progress {
+  margin-top: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.ex-level-info {
+  display: flex; flex-direction: column; gap: 2px;
+}
+.ex-level-label {
+  font-size: 10px; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--ink-faint);
+  font-weight: 700;
+}
+.ex-level-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.ex-level-num em {
+  font-style: italic;
+  color: var(--card-color, var(--rose-deep));
+}
+
+.ex-stars {
+  display: flex; gap: 5px;
+  align-items: center;
+  padding-bottom: 4px;
+}
+.ex-star {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--cream-deeper);
+  transition: all 0.3s;
+}
+.ex-star.on {
+  background: var(--card-color);
+  box-shadow: 0 0 0 3px rgba(232, 155, 155, 0.15);
+}
+
+.theme-rose { --card-color: var(--rose-deep); --card-tint: #FBEBEB; }
+.theme-mint { --card-color: var(--mint-deep); --card-tint: #E8F2E8; }
+.theme-sky { --card-color: var(--sky-deep); --card-tint: #E5EEF6; }
+.theme-peach { --card-color: var(--peach-deep); --card-tint: #FBEBDB; }
+.theme-lavender { --card-color: var(--lavender-deep); --card-tint: #EFE7F4; }
+.theme-butter { --card-color: #C99A4B; --card-tint: #FAF1DA; }
+
+/* Moving shapes stage */
+.moving-stage {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 1.42 / 1;
+  background: var(--cream);
+  border: 1px dashed var(--cream-deeper);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin: 12px 0 8px;
+}
+.moving-shape {
+  position: absolute;
+  top: 0; left: 0;
+  width: 78px; height: 78px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  will-change: transform;
+}
+.moving-shape svg {
+  width: 100%; height: 100%;
+  overflow: visible;
+  transition: filter 0.18s ease-out, transform 0.2s cubic-bezier(0.2, 0.8, 0.3, 1.3);
+  transform-origin: center;
+}
+.moving-shape.flash { z-index: 5; }
+.moving-shape.flash svg {
+  filter:
+    brightness(1.4) saturate(1.6)
+    drop-shadow(0 0 18px #FFFFFF)
+    drop-shadow(0 0 32px #FFFFFF)
+    drop-shadow(0 8px 22px rgba(61,51,40,0.28));
+  animation: shapePulse 0.6s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+@keyframes shapePulse {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.32); }
+  100% { transform: scale(1); }
+}
+.moving-shape:not(.disabled):active svg { filter: brightness(1.12); }
+.moving-shape.disabled { pointer-events: none; }
+@media (max-width: 760px) {
+  .moving-shape { width: 62px; height: 62px; }
+}
+
+/* ====================== OFFICINA DI STELLE ====================== */
+.dash-pills {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px;
+}
+.dash-pill {
+  background: white; border: 1px solid var(--cream-deep);
+  padding: 8px 16px; border-radius: var(--r-pill);
+  font-size: 12px; font-weight: 700; color: var(--ink-soft);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.dash-pill em {
+  font-style: normal; color: var(--ink);
+  font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600;
+  letter-spacing: -.01em;
+}
+.shop-card {
+  background: linear-gradient(135deg, #FFF6E0, #FFE9B8);
+  border: 1px solid #F0D9A0;
+  border-radius: var(--r-lg);
+  padding: 22px 24px;
+  cursor: pointer;
+  transition: all .35s cubic-bezier(.2,.8,.3,1);
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative; overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  animation: cardIn 0.6s cubic-bezier(0.2,0.8,0.3,1) 0.15s forwards;
+}
+.shop-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+.shop-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.shop-card-title {
+  font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
+  font-size: 22px; letter-spacing: -.02em; color: var(--ink); line-height: 1.1;
+}
+.shop-card-sub {
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: #A66432; font-weight: 700; margin-top: 4px;
+}
+.shop-stars {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.7); padding: 6px 12px; border-radius: var(--r-pill);
+  font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600;
+  color: var(--ink); letter-spacing: -.01em; flex-shrink: 0;
+}
+.shop-stars svg { width: 14px; height: 14px; }
+.shop-preview {
+  flex: 1;
+  background: linear-gradient(180deg, #BFD6E8 0%, #FAF5ED 70%, #95C295 100%);
+  border-radius: var(--r-md);
+  height: 130px; display: flex; align-items: flex-end; justify-content: center;
+  position: relative; overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.shop-preview svg { display: block; width: 100%; height: 100%; }
+.shop-cta {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 13px; font-weight: 700; color: #A66432;
+}
+.shop-cta-arrow { font-size: 18px; transition: transform .25s; }
+.shop-card:hover .shop-cta-arrow { transform: translateX(4px); }
+
+/* OFFICINA VIEW */
+.officina-view { display: none; }
+.officina-view.active { display: block; animation: fadeUp 0.4s cubic-bezier(0.2,0.8,0.3,1); }
+.officina-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 22px; flex-wrap: wrap; gap: 16px;
+}
+.stars-counter {
+  background: linear-gradient(135deg, #FFF6E0, #FFE9B8);
+  padding: 12px 22px; border-radius: var(--r-pill);
+  font-family: 'Fraunces', serif; font-size: 24px; font-weight: 600;
+  color: var(--ink); display: flex; align-items: center; gap: 10px;
+  letter-spacing: -.01em; box-shadow: var(--shadow-soft);
+  border: 1px solid #F0D9A0;
+}
+.stars-counter.bumping { animation: starBump .5s cubic-bezier(.2,.8,.3,1.3); }
+@keyframes starBump { 0%,100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+.stars-counter svg { width: 24px; height: 24px; }
+
+.officina-intro { margin-bottom: 22px; }
+.officina-intro h1 {
+  font-family: 'Fraunces', serif; font-weight: 400;
+  font-size: 42px; line-height: 1.05; letter-spacing: -.025em;
+}
+.officina-intro h1 em { font-style: italic; font-weight: 500; color: var(--terracotta); }
+.officina-intro p {
+  margin-top: 10px; font-size: 14px; color: var(--ink-soft); max-width: 560px;
+}
+
+.stage-wrap {
+  background: white; border-radius: var(--r-lg);
+  box-shadow: var(--shadow-soft); overflow: hidden;
+  margin-bottom: 28px; border: 1px solid rgba(232,222,201,.5);
+  position: relative;
+}
+.scene-svg {
+  display: block; width: 100%; height: auto; background: transparent;
+  transition: all .6s cubic-bezier(.2,.8,.3,1);
+}
+.stage-overlay {
+  position: absolute; top: 18px; left: 18px;
+  display: flex; flex-direction: column; gap: 8px; z-index: 2; pointer-events: none;
+}
+.size-badge, .env-badge {
+  background: rgba(255,255,255,.92); padding: 8px 16px;
+  border-radius: var(--r-pill); font-size: 12px; font-weight: 700;
+  color: var(--ink); backdrop-filter: blur(8px); box-shadow: var(--shadow-soft);
+}
+.size-badge { letter-spacing: .08em; text-transform: uppercase; }
+.size-badge em {
+  font-style: italic; color: var(--terracotta);
+  font-family: 'Fraunces', serif; font-size: 14px; font-weight: 600;
+  letter-spacing: -.01em;
+}
+
+.shop-tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+.tab-btn {
+  background: white; border: 1px solid var(--cream-deep);
+  padding: 11px 20px; border-radius: var(--r-pill);
+  font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 14px;
+  color: var(--ink-soft); cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; gap: 8px;
+}
+.tab-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-soft); color: var(--ink); }
+.tab-btn.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.tab-btn .ic { width: 18px; height: 18px; }
+
+.catalog-section { display: none; }
+.catalog-section.active { display: block; animation: fadeUp .35s cubic-bezier(.2,.8,.3,1); }
+.items-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+.item-card {
+  background: white; border: 1px solid rgba(232,222,201,.5);
+  border-radius: var(--r-md); padding: 16px; cursor: pointer;
+  transition: all .25s cubic-bezier(.2,.8,.3,1);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.item-card:not(.locked):not(.owned):hover {
+  transform: translateY(-3px); box-shadow: var(--shadow-lift);
+  border-color: var(--cream-deeper);
+}
+.item-card.owned {
+  background: linear-gradient(135deg, #F4FAF4, #E8F2E8);
+  border-color: #C5E1C5;
+}
+.item-card.equipped {
+  background: linear-gradient(135deg, #FFF8E8, #FFEFD0);
+  border-color: #F0D9A0;
+  box-shadow: 0 0 0 2px var(--gold) inset;
+}
+.item-card.equipped::after {
+  content: 'INDOSSATO'; position: absolute; top: 8px; right: 8px;
+  background: var(--gold); color: white;
+  font-size: 9px; font-weight: 800; letter-spacing: .1em;
+  padding: 3px 8px; border-radius: var(--r-pill);
+}
+.item-card.locked { opacity: .5; cursor: not-allowed; }
+.item-card.locked::after {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(168,154,138,.05) 8px, rgba(168,154,138,.05) 12px);
+  pointer-events: none;
+}
+.item-thumb {
+  width: 100%; aspect-ratio: 1.4/1;
+  background: var(--cream); border-radius: 12px;
+  display: grid; place-items: center;
+  margin-bottom: 4px; overflow: hidden;
+  border: 1px solid var(--cream-deep);
+}
+.item-thumb svg { max-width: 84%; max-height: 84%; }
+.item-name {
+  font-family: 'Fraunces', serif; font-weight: 500; font-size: 16px;
+  letter-spacing: -.01em; line-height: 1.15;
+}
+.item-desc {
+  font-size: 11px; color: var(--ink-faint);
+  line-height: 1.4; height: 30px; overflow: hidden;
+}
+.item-cost {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: auto; padding-top: 6px;
+}
+.cost-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--cream-deep); padding: 4px 10px;
+  border-radius: var(--r-pill); font-weight: 700; font-size: 13px; color: var(--ink);
+}
+.cost-pill svg { width: 13px; height: 13px; }
+.cost-pill.affordable { background: #FFF6E0; color: #A66432; }
+.cost-pill.expensive { background: #FBEBEB; color: var(--terracotta); }
+.cost-pill.free { background: #E8F2E8; color: #4F7A4F; }
+.action-hint {
+  font-size: 11px; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.action-hint.buy { color: var(--terracotta); }
+.action-hint.wear { color: #4F7A4F; }
+.action-hint.remove { color: var(--ink-faint); }
+
+/* SVG anims for officina */
+.robot-shadow { transform-origin: center; animation: shadowBob 4s ease-in-out infinite; }
+@keyframes shadowBob {
+  0%,100% { opacity: .35; transform: scaleX(1); }
+  50% { opacity: .45; transform: scaleX(.94); }
+}
+.float-anim { animation: floatY 3.2s ease-in-out infinite; }
+@keyframes floatY {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-1.5px); }
+}
+.cape-sway { transform-origin: top center; animation: capeSway 4s ease-in-out infinite; }
+@keyframes capeSway {
+  0%,100% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(1.5deg); }
+}
+.flame-flicker { animation: flick .25s ease-in-out infinite alternate; }
+@keyframes flick {
+  from { transform: scaleY(.85); opacity: .85; }
+  to { transform: scaleY(1.1); opacity: 1; }
+}
+.twinkle { animation: twink 2.4s ease-in-out infinite; }
+@keyframes twink {
+  0%,100% { opacity: .4; }
+  50% { opacity: 1; }
+}
+.firefly { animation: fireflyPath 8s ease-in-out infinite, twink 1.6s ease-in-out infinite; }
+@keyframes fireflyPath {
+  0% { transform: translate(0,0); }
+  25% { transform: translate(8px,-6px); }
+  50% { transform: translate(-4px,-10px); }
+  75% { transform: translate(-10px,4px); }
+  100% { transform: translate(0,0); }
+}
+
+@media (max-width: 760px) {
+  .officina-intro h1 { font-size: 30px; }
+  .stars-counter { font-size: 20px; padding: 10px 18px; }
+  .items-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .item-card { padding: 12px; }
+}
+
+/* SIGNATURE */
+.signature {
+  text-align: center;
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--cream-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.signature:hover { opacity: 1; }
+.signature-mark {
+  width: 28px; height: 28px;
+  display: grid; place-items: center;
+  background: var(--cream-deep);
+  border-radius: 50%;
+}
+.signature-mark svg { width: 16px; height: 16px; }
+.signature-text {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--ink-soft);
+  letter-spacing: -0.005em;
+}
+.signature-text strong {
+  font-weight: 600;
+  color: var(--terracotta);
+  font-style: normal;
+  font-family: 'Fraunces', serif;
+  letter-spacing: -0.01em;
+}
+.signature-dot {
+  width: 4px; height: 4px;
+  background: var(--cream-deeper);
+  border-radius: 50%;
+}
+.signature-sub {
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* EXERCISE VIEW */
+.exercise-view {
+  display: none;
+}
+.exercise-view.active {
+  display: block;
+  animation: fadeUp 0.4s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ex-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.back-btn {
+  background: white;
+  border: 1px solid var(--cream-deep);
+  padding: 11px 20px;
+  border-radius: var(--r-pill);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 8px;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+.back-btn:hover { transform: translateX(-2px); box-shadow: var(--shadow-soft); }
+
+.ex-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.ex-meta-pill {
+  background: white;
+  padding: 9px 16px;
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: flex; gap: 8px; align-items: center;
+  border: 1px solid var(--cream-deep);
+}
+.ex-meta-pill em {
+  font-style: normal;
+  color: var(--card-color);
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.round-progress {
+  width: 100%;
+  height: 5px;
+  background: var(--cream-deep);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.round-progress-fill {
+  height: 100%;
+  background: var(--card-color, var(--terracotta));
+  border-radius: 3px;
+  transition: width 0.4s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+/* PLAY AREA */
+.play-area {
+  background: white;
+  border-radius: var(--r-lg);
+  padding: 56px 40px;
+  min-height: 560px;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(232, 222, 201, 0.5);
+}
+
+.play-state {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.play-state.active { display: flex; }
+
+.instructions {
+  text-align: center;
+  max-width: 540px;
+}
+.instructions .ill {
+  margin: 0 auto 24px;
+  width: 110px; height: 110px;
+  display: grid; place-items: center;
+  background: var(--card-tint);
+  border-radius: 28px;
+}
+.instructions h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 38px;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+.instructions h2 em { font-style: italic; color: var(--card-color); }
+.instructions p {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.btn {
+  background: var(--ink);
+  color: var(--cream);
+  border: none;
+  padding: 16px 32px;
+  border-radius: var(--r-pill);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.3, 1);
+  box-shadow: var(--shadow-soft);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.btn:active { transform: translateY(0); }
+.btn.primary { background: var(--terracotta); color: white; }
+.btn.large { padding: 18px 42px; font-size: 15px; }
+.btn.ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  box-shadow: none;
+}
+.btn.ghost:hover { background: var(--cream-deep); transform: none; }
+
+/* WATCH state visuals */
+.watch-label {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: var(--card-color);
+  margin-bottom: 24px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.watch-label.player { color: var(--ink); }
+
+/* Sequence game (Simon-like) */
+.seq-board {
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  gap: 24px;
+  margin: 12px 0 8px;
+}
+.seq-cell {
+  width: 130px; height: 130px;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.2, 0.8, 0.3, 1);
+  display: grid; place-items: center;
+  border: none;
+  position: relative;
+  box-shadow: var(--shadow-soft);
+}
+.seq-cell:active { transform: scale(0.96); }
+.seq-cell.flash {
+  filter: brightness(1.15) saturate(1.4);
+  transform: scale(1.06);
+  box-shadow: var(--shadow-lift);
+}
+.seq-cell.disabled { pointer-events: none; opacity: 0.85; }
+.seq-cell svg { width: 56px; height: 56px; }
+
+/* Corsi grid */
+.corsi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 84px);
+  gap: 14px;
+  margin: 12px 0;
+}
+.corsi-cell {
+  width: 84px; height: 84px;
+  background: var(--cream-deep);
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.3, 1);
+  border: 2px solid transparent;
+}
+.corsi-cell:not(.disabled):hover { background: var(--cream-deeper); }
+.corsi-cell.flash {
+  background: var(--mint-deep);
+  transform: scale(1.08);
+  box-shadow: var(--shadow-soft);
+}
+.corsi-cell.player {
+  background: var(--sky-deep);
+  transform: scale(1.04);
+}
+.corsi-cell.error {
+  background: var(--rose-deep);
+  animation: shake 0.4s;
+}
+.corsi-cell.disabled { pointer-events: none; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-7px); }
+  75% { transform: translateX(7px); }
+}
+
+/* Reverse memory */
+.rev-display {
+  width: 220px; height: 220px;
+  background: var(--card-tint);
+  border-radius: 36px;
+  display: grid; place-items: center;
+  margin: 12px 0 24px;
+  box-shadow: var(--shadow-soft);
+}
+.rev-symbol {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 110px;
+  color: var(--card-color);
+  letter-spacing: -0.04em;
+  animation: popSym 0.25s cubic-bezier(0.2, 0.8, 0.3, 1.4);
+  line-height: 1;
+}
+@keyframes popSym {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.rev-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 76px);
+  gap: 12px;
+  margin-top: 8px;
+}
+.rev-key {
+  width: 76px; height: 76px;
+  background: var(--cream-deep);
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--ink);
+  transition: all 0.15s;
+}
+.rev-key:hover { background: var(--cream-deeper); }
+.rev-key:active { transform: scale(0.94); }
+.rev-key.disabled { pointer-events: none; opacity: 0.5; }
+.rev-input-display {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rev-input-display .empty {
+  display: inline-block;
+  width: 12px; height: 4px;
+  background: var(--cream-deeper);
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+/* Attention grid */
+.attention-info {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--card-color);
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+.attention-target-show {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card-tint);
+  padding: 12px 24px;
+  border-radius: var(--r-pill);
+  margin-bottom: 20px;
+}
+.attention-target-show .label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+.attention-target-show svg { width: 32px; height: 32px; }
+.attention-grid {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+.attention-cell {
+  background: var(--cream);
+  border: 1px solid var(--cream-deep);
+  border-radius: 14px;
+  display: grid; place-items: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.attention-cell:hover { background: var(--cream-deep); }
+.attention-cell svg { width: 60%; height: 60%; }
+.attention-cell.found {
+  background: var(--mint);
+  border-color: var(--mint-deep);
+  pointer-events: none;
+  animation: tickIn 0.3s;
+}
+.attention-cell.miss {
+  animation: missShake 0.35s;
+}
+@keyframes tickIn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+@keyframes missShake {
+  0%, 100% { transform: translateX(0); background: var(--cream); }
+  25% { transform: translateX(-4px); background: #FBEBEB; }
+  75% { transform: translateX(4px); background: #FBEBEB; }
+}
+.timer-display {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--ink);
+  background: var(--cream-deep);
+  padding: 6px 18px;
+  border-radius: var(--r-pill);
+  letter-spacing: -0.01em;
+}
+
+/* Go/No-Go */
+.gng-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+.gng-targets-info {
+  display: flex; gap: 24px;
+  background: var(--cream);
+  padding: 14px 22px;
+  border-radius: var(--r-md);
+  margin-bottom: 8px;
+}
+.gng-targets-info > div {
+  display: flex; align-items: center; gap: 10px;
+}
+.gng-targets-info .lbl {
+  font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--ink-faint);
+  font-weight: 700;
+}
+.gng-targets-info svg { width: 28px; height: 28px; }
+.gng-stage {
+  width: 280px; height: 280px;
+  background: var(--cream);
+  border: 1px dashed var(--cream-deeper);
+  border-radius: 50%;
+  display: grid; place-items: center;
+  position: relative;
+}
+.gng-stimulus {
+  animation: pop 0.2s cubic-bezier(0.2, 0.8, 0.3, 1.4);
+}
+.gng-stimulus svg { width: 130px; height: 130px; }
+@keyframes pop {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.gng-tap-btn {
+  width: 240px; height: 78px;
+  border-radius: var(--r-pill);
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background: var(--peach-deep);
+  color: white;
+  transition: all 0.12s;
+  box-shadow: var(--shadow-lift);
+}
+.gng-tap-btn:active { transform: scale(0.96); }
+.gng-tap-btn.flash-correct { background: var(--mint-deep); }
+.gng-tap-btn.flash-wrong { background: var(--rose-deep); }
+.gng-counter {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ink-soft);
+  font-size: 16px;
+}
+
+/* Feedback */
+.feedback-icon {
+  width: 130px; height: 130px;
+  margin: 0 auto 24px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  animation: popIn 0.5s cubic-bezier(0.2, 0.8, 0.3, 1.4);
+}
+@keyframes popIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.feedback-icon.success { background: #E8F2E8; }
+.feedback-icon.fail { background: #FBEBDB; }
+.feedback-icon svg { width: 64px; height: 64px; }
+
+.feedback h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.feedback h2 em { font-style: italic; color: var(--terracotta); }
+.feedback > p {
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.level-change {
+  background: var(--cream);
+  border-radius: var(--r-md);
+  padding: 14px 22px;
+  margin: 0 0 28px;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid transparent;
+}
+.level-change.up { background: #E8F2E8; color: #4F7A4F; border-color: #C5E1C5; }
+.level-change.down { background: #FBEBDB; color: #A66432; border-color: #F5CFA8; }
+.level-change.steady { background: var(--cream); color: var(--ink-soft); border-color: var(--cream-deep); }
+.level-change svg { width: 18px; height: 18px; }
+
+.feedback-actions {
+  display: flex; gap: 12px;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(61, 51, 40, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: none;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-backdrop.active { display: flex; animation: fadeIn 0.2s; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal {
+  background: var(--cream);
+  border-radius: var(--r-lg);
+  padding: 40px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: var(--shadow-deep);
+  animation: modalIn 0.3s cubic-bezier(0.2, 0.8, 0.3, 1.05);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.modal h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 30px;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.modal h2 em { font-style: italic; color: var(--terracotta); }
+.modal > p {
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+.input-row { margin-bottom: 18px; }
+.input-row label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.input-row input {
+  width: 100%;
+  padding: 14px 18px;
+  background: white;
+  border: 1px solid var(--cream-deep);
+  border-radius: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: border 0.2s;
+}
+.input-row input:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+.btn.danger {
+  background: #FBEBEB;
+  color: var(--terracotta);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(140px);
+  background: var(--ink);
+  color: var(--cream);
+  padding: 14px 26px;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: var(--shadow-deep);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.3, 1);
+  z-index: 200;
+  pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* Confetti */
+.confetti-piece {
+  position: fixed;
+  width: 8px; height: 14px;
+  pointer-events: none;
+  z-index: 300;
+  border-radius: 2px;
+}
+
+/* Stagger entrance */
+.exercises-map .exercise-card {
+  opacity: 0;
+  animation: cardIn 0.55s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+}
+.exercises-map .exercise-card:nth-child(1) { animation-delay: 0.06s; }
+.exercises-map .exercise-card:nth-child(2) { animation-delay: 0.13s; }
+.exercises-map .exercise-card:nth-child(3) { animation-delay: 0.20s; }
+.exercises-map .exercise-card:nth-child(4) { animation-delay: 0.27s; }
+.exercises-map .exercise-card:nth-child(5) { animation-delay: 0.34s; }
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.greeting, .streak-card {
+  opacity: 0;
+  animation: cardIn 0.6s cubic-bezier(0.2, 0.8, 0.3, 1) 0.05s forwards;
+}
+.streak-card { animation-delay: 0.15s; }
+
+@media (max-width: 760px) {
+  #app { padding: 24px 18px 60px; }
+  .app-header { margin-bottom: 36px; }
+  .dashboard-intro { grid-template-columns: 1fr; gap: 28px; margin-bottom: 44px; }
+  .greeting h1 { font-size: 40px; }
+  .play-area { padding: 32px 18px; min-height: 480px; }
+  .seq-board { grid-template-columns: repeat(2, 110px); gap: 18px; }
+  .seq-cell { width: 110px; height: 110px; }
+  .corsi-grid { grid-template-columns: repeat(4, 70px); gap: 10px; }
+  .corsi-cell { width: 70px; height: 70px; }
+  .ex-meta { flex-wrap: wrap; }
+  .brand-name { font-size: 24px; }
+  .child-pill span:not(.avatar) { display: none; }
+  .child-pill { padding: 10px 12px; }
+  .instructions h2 { font-size: 30px; }
+  .gng-stage { width: 220px; height: 220px; }
+  .gng-stimulus svg { width: 100px; height: 100px; }
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+          <path d="M16 4 C 9 4, 4 9, 4 16 C 4 21, 8 25, 13 26 C 13 28, 14 30, 16 30 C 18 30, 19 28, 19 26 C 24 25, 28 21, 28 16 C 28 9, 23 4, 16 4 Z" fill="#7FA37F" opacity="0.9"/>
+          <path d="M16 8 C 12 8, 9 11, 9 15 C 9 18, 11 20, 13 20 L 13 24 L 19 24 L 19 20 C 21 20, 23 18, 23 15 C 23 11, 20 8, 16 8 Z" fill="#FAF5ED"/>
+          <circle cx="13" cy="14" r="1.4" fill="#3D3328"/>
+          <circle cx="19" cy="14" r="1.4" fill="#3D3328"/>
+          <path d="M14 17 Q 16 18.5 18 17" stroke="#3D3328" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Allena la mente</div>
+        <div class="brand-sub">allenamento cognitivo</div>
+      </div>
+    </div>
+    <div class="header-tools">
+      <button class="child-pill" id="childPill" title="Cambia nome">
+        <span class="avatar"></span>
+        <span id="childNameLabel">Imposta nome</span>
+      </button>
+      <button class="icon-btn" id="muteBtn" title="Audio" aria-label="Audio">
+        <svg id="muteIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D3328" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+        </svg>
+      </button>
+      <button class="icon-btn" id="settingsBtn" title="Impostazioni" aria-label="Impostazioni">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D3328" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- DASHBOARD VIEW -->
+  <section id="dashboardView">
+    <div class="dashboard-intro">
+      <div class="greeting">
+        <h1>Ciao, <em id="greetingName">amico</em>.<br>Pronto per <em>allenare</em><br>la mente?</h1>
+        <p>Cinque giochi per crescere ogni giorno: ognuno cura la memoria di lavoro e l'attenzione in un modo diverso.</p>
+        <div class="dash-pills">
+          <div class="dash-pill">Sessioni <em id="totalSessions">0</em></div>
+          <div class="dash-pill">Liv. medio <em id="avgLevel">1</em></div>
+        </div>
+      </div>
+      <div class="shop-card" id="openOfficinaBtn" role="button" tabindex="0" aria-label="Apri Officina di Stelle">
+        <div class="shop-card-head">
+          <div>
+            <div class="shop-card-title">Officina di Stelle</div>
+            <div class="shop-card-sub">spendi le tue stelle</div>
+          </div>
+          <div class="shop-stars">
+            <svg viewBox="0 0 24 24" fill="#D4A574"><path d="M12 2 L 14.5 8.5 L 21.5 9 L 16.2 13.5 L 18 21 L 12 16.8 L 6 21 L 7.8 13.5 L 2.5 9 L 9.5 8.5 Z"/></svg>
+            <span id="starsAvailableHome">0</span>
+          </div>
+        </div>
+        <div class="shop-preview" id="shopPreview"></div>
+        <div class="shop-cta">
+          <span>Costruisci il tuo robot</span>
+          <span class="shop-cta-arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">la mappa dei giochi</div>
+    <div class="exercises-map" id="exercisesMap"></div>
+  </section>
+
+  <!-- EXERCISE VIEW -->
+  <section id="exerciseView" class="exercise-view">
+    <div class="ex-view-header">
+      <button class="back-btn" id="backBtn">
+        <span>←</span> Torna alla mappa
+      </button>
+      <div class="ex-meta" id="exMeta"></div>
+    </div>
+    <div class="round-progress"><div class="round-progress-fill" id="roundProgress" style="width:0%"></div></div>
+    <div class="play-area" id="playArea"></div>
+  </section>
+
+  <!-- OFFICINA VIEW -->
+  <section id="officinaView" class="officina-view">
+    <div class="officina-header">
+      <button class="back-btn" id="officinaBackBtn">
+        <span>←</span> Torna alla mappa
+      </button>
+      <div class="stars-counter" id="starsCounter">
+        <svg viewBox="0 0 24 24" fill="#D4A574"><path d="M12 2 L 14.5 8.5 L 21.5 9 L 16.2 13.5 L 18 21 L 12 16.8 L 6 21 L 7.8 13.5 L 2.5 9 L 9.5 8.5 Z"/></svg>
+        <span id="starsAvailable">0</span>
+      </div>
+    </div>
+
+    <div class="officina-intro">
+      <h1>Trasforma le stelle in <em>imprese</em>.</h1>
+      <p>Ogni stella che hai guadagnato negli allenamenti può diventare qualcosa di speciale: fai crescere il tuo robot, vestilo con armature ed equipaggiamenti, cambia il mondo intorno a lui.</p>
+    </div>
+
+    <div class="stage-wrap">
+      <div class="stage-overlay">
+        <div class="size-badge">Altezza · <em id="sizeBadgeText">1.8 m</em></div>
+        <div class="env-badge" id="envBadge">Pianura tranquilla</div>
+      </div>
+      <div id="sceneContainer"></div>
+    </div>
+
+    <div class="shop-tabs">
+      <button class="tab-btn active" data-tab="size">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M4 12h16M7 8L4 4M17 16l3 4M7 16L4 20M17 8l3-4"/></svg>
+        Crescita
+      </button>
+      <button class="tab-btn" data-tab="equipment">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-7 8-13a8 8 0 0 0-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+        Equipaggiamento
+      </button>
+      <button class="tab-btn" data-tab="environment">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        Ambiente
+      </button>
+    </div>
+
+    <div class="catalog-section active" data-section="size">
+      <div class="section-label">scegli la tua statura</div>
+      <div class="items-grid" id="sizeGrid"></div>
+    </div>
+
+    <div class="catalog-section" data-section="equipment">
+      <div class="section-label">testa</div>
+      <div class="items-grid" data-slot="head"></div>
+      <div class="section-label">antenne</div>
+      <div class="items-grid" data-slot="antennas"></div>
+      <div class="section-label">spalle</div>
+      <div class="items-grid" data-slot="shoulders"></div>
+      <div class="section-label">schiena</div>
+      <div class="items-grid" data-slot="back"></div>
+      <div class="section-label">petto</div>
+      <div class="items-grid" data-slot="chest"></div>
+      <div class="section-label">mano sinistra</div>
+      <div class="items-grid" data-slot="leftHand"></div>
+      <div class="section-label">mano destra</div>
+      <div class="items-grid" data-slot="rightHand"></div>
+    </div>
+
+    <div class="catalog-section" data-section="environment">
+      <div class="section-label">scegli il tuo mondo</div>
+      <div class="items-grid" id="envGrid"></div>
+    </div>
+  </section>
+
+  <footer class="signature">
+    <div class="signature-mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 19c2-3 5-4 7-4s5 1 7 4" stroke="#C97862" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="12" cy="9" r="4" stroke="#C97862" stroke-width="1.6"/>
+        <path d="M9 4l1 2M15 4l-1 2" stroke="#C97862" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="signature-text">progettato con cura da <strong>Prof. Flavio</strong></span>
+  </footer>
+</div>
+
+<!-- Settings modal -->
+<div class="modal-backdrop" id="settingsModal">
+  <div class="modal">
+    <h2>Impostazioni</h2>
+    <p>Personalizza l'esperienza e gestisci il progresso.</p>
+    <div class="input-row">
+      <label>Nome del bambino</label>
+      <input type="text" id="nameInput" placeholder="Federico" maxlength="24" autocomplete="off">
+    </div>
+    <div class="modal-actions">
+      <button class="btn danger" id="resetBtn">Azzera progresso</button>
+      <button class="btn ghost" id="closeSettingsBtn">Annulla</button>
+      <button class="btn primary" id="saveSettingsBtn">Salva</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm reset modal -->
+<div class="modal-backdrop" id="confirmModal">
+  <div class="modal">
+    <h2>Sei <em>sicuro</em>?</h2>
+    <p>Questa azione cancella tutti i progressi salvati. Non si può annullare.</p>
+    <div class="modal-actions">
+      <button class="btn ghost" id="cancelResetBtn">No, indietro</button>
+      <button class="btn danger" id="confirmResetBtn">Sì, azzera tutto</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================================
+// MENTE LIEVE — Allenamento cognitivo
+// Working memory & attention training, ZPD-based progression
+// ============================================================
+
+const STORAGE_KEY = 'menteLieve.v1';
+
+const EXERCISES = [
+  {
+    id: 'sequence',
+    name: 'Sequenza Magica',
+    desc: 'Guarda i colori che si accendono, poi ripeti l\'ordine.',
+    theme: 'rose',
+    minLevel: 2, maxLevel: 9,
+    init: initSequence,
+    icon: `<svg viewBox="0 0 64 64" fill="none">
+      <circle cx="20" cy="22" r="11" fill="#E89B9B"/>
+      <rect x="33" y="11" width="22" height="22" rx="6" fill="#8FB4D0"/>
+      <path d="M20 41 L 32 56 L 44 41 Z" fill="#95C295"/>
+      <circle cx="48" cy="48" r="9" fill="#E8AC7A"/>
+    </svg>`
+  },
+  {
+    id: 'spatial',
+    name: 'Castello di Memoria',
+    desc: 'Ricorda le caselle che si accendono e toccale nello stesso ordine.',
+    theme: 'mint',
+    minLevel: 2, maxLevel: 8,
+    init: initSpatial,
+    icon: `<svg viewBox="0 0 64 64" fill="none">
+      <rect x="8" y="20" width="48" height="32" rx="3" fill="#95C295"/>
+      <rect x="8" y="14" width="8" height="10" fill="#95C295"/>
+      <rect x="20" y="10" width="8" height="14" fill="#95C295"/>
+      <rect x="36" y="10" width="8" height="14" fill="#95C295"/>
+      <rect x="48" y="14" width="8" height="10" fill="#95C295"/>
+      <path d="M28 52 L 28 38 Q 32 34 36 38 L 36 52 Z" fill="#FAF5ED"/>
+      <circle cx="32" cy="44" r="1.5" fill="#3D3328"/>
+    </svg>`
+  },
+  {
+    id: 'reverse',
+    name: 'Forziere Inverso',
+    desc: 'Ti mostro dei numeri. Tu li ripeti al contrario, dall\'ultimo al primo.',
+    theme: 'lavender',
+    minLevel: 2, maxLevel: 7,
+    init: initReverse,
+    icon: `<svg viewBox="0 0 64 64" fill="none">
+      <rect x="10" y="22" width="44" height="32" rx="4" fill="#B498D0"/>
+      <rect x="10" y="18" width="44" height="14" rx="4" fill="#9B7FB8"/>
+      <circle cx="32" cy="30" r="4" fill="#D4A574"/>
+      <path d="M14 18 Q 14 8 32 8 Q 50 8 50 18" stroke="#B498D0" stroke-width="3" fill="none"/>
+      <path d="M40 36 L 30 42 L 40 48" stroke="#FAF5ED" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`
+  },
+  {
+    id: 'attention',
+    name: 'Caccia al Tesoro',
+    desc: 'Trova tutte le stelline nascoste tra le altre forme prima dello scadere del tempo.',
+    theme: 'sky',
+    minLevel: 1, maxLevel: 8,
+    init: initAttention,
+    icon: `<svg viewBox="0 0 64 64" fill="none">
+      <circle cx="40" cy="24" r="16" fill="none" stroke="#8FB4D0" stroke-width="4"/>
+      <line x1="28" y1="36" x2="14" y2="50" stroke="#8FB4D0" stroke-width="5" stroke-linecap="round"/>
+      <path d="M40 14 L 42.5 21 L 49 21 L 43.5 25 L 46 32 L 40 28 L 34 32 L 36.5 25 L 31 21 L 37.5 21 Z" fill="#E8AC7A"/>
+    </svg>`
+  },
+  {
+    id: 'gonogo',
+    name: 'Stella o Tempesta',
+    desc: 'Tocca solo quando vedi la STELLA. Se vedi la nuvola, lascia stare!',
+    theme: 'peach',
+    minLevel: 1, maxLevel: 6,
+    init: initGoNoGo,
+    icon: `<svg viewBox="0 0 64 64" fill="none">
+      <path d="M22 14 L 24.5 22 L 33 22 L 26 27 L 28.5 35 L 22 30 L 15.5 35 L 18 27 L 11 22 L 19.5 22 Z" fill="#E8AC7A"/>
+      <ellipse cx="44" cy="42" rx="14" ry="10" fill="#A89A8A"/>
+      <ellipse cx="38" cy="40" rx="8" ry="7" fill="#A89A8A"/>
+      <ellipse cx="50" cy="38" rx="8" ry="7" fill="#A89A8A"/>
+    </svg>`
+  },
+  {
+    id: 'moving',
+    name: 'Costellazione Vagante',
+    desc: 'Le forme si muovono piano. Guarda l\'ordine in cui si accendono e ritoccale uguale.',
+    theme: 'butter',
+    minLevel: 2, maxLevel: 8,
+    init: initMoving,
+    icon: `<svg viewBox="0 0 64 64" fill="none">
+      <path d="M 10 26 C 6 16, 18 8, 28 14 C 38 10, 46 18, 42 28 C 48 32, 46 42, 36 40 C 30 48, 18 44, 16 36 C 8 36, 6 30, 10 26 Z" fill="#E89B9B"/>
+      <path d="M 36 16 C 42 12, 52 16, 54 24 C 58 30, 52 38, 46 36 C 38 40, 32 34, 34 26 C 32 20, 32 18, 36 16 Z" fill="#8FB4D0"/>
+      <path d="M 24 44 C 30 40, 40 42, 42 50 C 44 58, 34 60, 28 56 C 20 58, 18 50, 24 44 Z" fill="#C99A4B"/>
+    </svg>`
+  }
+];
+
+const SHAPE_LIBRARY = {
+  star: `<svg viewBox="0 0 64 64"><path d="M32 8 L 38 24 L 56 26 L 42 38 L 47 56 L 32 46 L 17 56 L 22 38 L 8 26 L 26 24 Z" fill="#E8AC7A"/></svg>`,
+  circle: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="22" fill="#8FB4D0"/></svg>`,
+  square: `<svg viewBox="0 0 64 64"><rect x="12" y="12" width="40" height="40" rx="8" fill="#95C295"/></svg>`,
+  triangle: `<svg viewBox="0 0 64 64"><path d="M32 10 L 56 52 L 8 52 Z" fill="#E89B9B"/></svg>`,
+  heart: `<svg viewBox="0 0 64 64"><path d="M32 54 L 12 32 Q 4 22 14 14 Q 24 8 32 20 Q 40 8 50 14 Q 60 22 52 32 Z" fill="#E89B9B"/></svg>`,
+  diamond: `<svg viewBox="0 0 64 64"><path d="M32 8 L 56 32 L 32 56 L 8 32 Z" fill="#B498D0"/></svg>`,
+  cloud: `<svg viewBox="0 0 64 64"><ellipse cx="32" cy="36" rx="20" ry="14" fill="#A89A8A"/><ellipse cx="22" cy="32" rx="12" ry="10" fill="#A89A8A"/><ellipse cx="42" cy="30" rx="11" ry="9" fill="#A89A8A"/></svg>`,
+  flower: `<svg viewBox="0 0 64 64"><circle cx="32" cy="20" r="9" fill="#F5CFA8"/><circle cx="20" cy="32" r="9" fill="#F5CFA8"/><circle cx="44" cy="32" r="9" fill="#F5CFA8"/><circle cx="32" cy="44" r="9" fill="#F5CFA8"/><circle cx="32" cy="32" r="6" fill="#E8AC7A"/></svg>`,
+};
+
+const DEFAULT_STATE = {
+  childName: '',
+  exercises: {
+    sequence:  { level: 2, successStreak: 0, failStreak: 0, totalRounds: 0, totalStars: 0, bestLevel: 2 },
+    spatial:   { level: 2, successStreak: 0, failStreak: 0, totalRounds: 0, totalStars: 0, bestLevel: 2 },
+    reverse:   { level: 2, successStreak: 0, failStreak: 0, totalRounds: 0, totalStars: 0, bestLevel: 2 },
+    attention: { level: 1, successStreak: 0, failStreak: 0, totalRounds: 0, totalStars: 0, bestLevel: 1 },
+    gonogo:    { level: 1, successStreak: 0, failStreak: 0, totalRounds: 0, totalStars: 0, bestLevel: 1 },
+    moving:    { level: 2, successStreak: 0, failStreak: 0, totalRounds: 0, totalStars: 0, bestLevel: 2 }
+  },
+  totalSessions: 0
+};
+
+// ----- State persistence -----
+let state;
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return clone(DEFAULT_STATE);
+    const parsed = JSON.parse(raw);
+    const merged = clone(DEFAULT_STATE);
+    if (parsed.childName) merged.childName = parsed.childName;
+    if (typeof parsed.totalSessions === 'number') merged.totalSessions = parsed.totalSessions;
+    if (parsed.exercises) {
+      Object.keys(merged.exercises).forEach(k => {
+        if (parsed.exercises[k]) Object.assign(merged.exercises[k], parsed.exercises[k]);
+      });
+    }
+    return merged;
+  } catch(e) {
+    console.warn('Errore caricamento stato:', e);
+    return clone(DEFAULT_STATE);
+  }
+}
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  catch(e) { console.warn('Errore salvataggio:', e); }
+}
+function clone(o) { return JSON.parse(JSON.stringify(o)); }
+
+// ============================================================
+// AUDIO — Web Audio API, simple sounds for training, complex for shop
+// ============================================================
+const audio = (function(){
+  let ctx = null, master = null, muted = false;
+  const STATE_KEY = 'menteLieve.audio';
+  try { muted = localStorage.getItem(STATE_KEY) === 'muted'; } catch(e){}
+
+  function init() {
+    if (ctx) return;
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      ctx = new AC();
+      master = ctx.createGain();
+      master.gain.value = muted ? 0 : 0.45;
+      master.connect(ctx.destination);
+    } catch(e) { ctx = null; }
+  }
+  function ready() {
+    if (!ctx) init();
+    if (ctx && ctx.state === 'suspended') ctx.resume();
+    return !!ctx && !muted;
+  }
+  function toggleMute() {
+    muted = !muted;
+    if (master) master.gain.value = muted ? 0 : 0.45;
+    try { localStorage.setItem(STATE_KEY, muted ? 'muted' : 'on'); } catch(e){}
+    return muted;
+  }
+  function isMuted() { return muted; }
+
+  function tone(freq, opts) {
+    opts = opts || {};
+    if (!ready()) return;
+    const t = ctx.currentTime + (opts.delay || 0);
+    const dur = opts.dur || 0.15;
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = opts.type || 'sine';
+    o.frequency.setValueAtTime(freq, t);
+    if (opts.freqTo) o.frequency.exponentialRampToValueAtTime(Math.max(20, opts.freqTo), t + dur);
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(opts.vol || 0.3, t + (opts.atk || 0.008));
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g).connect(opts.dest || master);
+    o.start(t);
+    o.stop(t + dur + 0.02);
+  }
+
+  function noiseHit(opts) {
+    opts = opts || {};
+    if (!ready()) return;
+    const dur = opts.dur || 0.2;
+    const t = ctx.currentTime + (opts.delay || 0);
+    const buffer = ctx.createBuffer(1, Math.max(1, Math.floor(ctx.sampleRate * dur)), ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < data.length; i++) data[i] = (Math.random()*2 - 1) * 0.5;
+    const src = ctx.createBufferSource();
+    src.buffer = buffer;
+    const filter = ctx.createBiquadFilter();
+    filter.type = opts.filterType || 'highpass';
+    filter.frequency.value = opts.filterFreq || 2000;
+    if (opts.Q) filter.Q.value = opts.Q;
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(opts.vol || 0.18, t + 0.005);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    src.connect(filter).connect(g).connect(opts.dest || master);
+    src.start(t);
+    src.stop(t + dur + 0.02);
+  }
+
+  // === SIMPLE SOUNDS — training ===
+  function uiTap()   { tone(880, { dur: 0.06, vol: 0.16 }); }
+  function startGame() {
+    tone(523, { dur: 0.10, vol: 0.22, type: 'triangle' });
+    tone(784, { dur: 0.18, vol: 0.22, type: 'triangle', delay: 0.08 });
+  }
+  // pentatonic mapping for sequence flashes
+  const NOTES = [523, 587, 659, 784, 880, 988, 1175, 1319, 1568, 1760];
+  function flashTone(idx) {
+    const f = NOTES[(idx | 0) % NOTES.length];
+    tone(f, { dur: 0.32, vol: 0.26, type: 'triangle', atk: 0.01 });
+  }
+  function tapOk(idx) {
+    const f = NOTES[(idx | 0) % NOTES.length];
+    tone(f, { dur: 0.18, vol: 0.20, type: 'sine' });
+  }
+  function tapWrong() {
+    tone(220, { dur: 0.22, vol: 0.26, type: 'square', freqTo: 110 });
+  }
+  function success() {
+    tone(523, { dur: 0.12, vol: 0.24, type: 'triangle' });
+    tone(659, { dur: 0.12, vol: 0.24, type: 'triangle', delay: 0.08 });
+    tone(784, { dur: 0.12, vol: 0.24, type: 'triangle', delay: 0.16 });
+    tone(1047, { dur: 0.30, vol: 0.28, type: 'triangle', delay: 0.24 });
+  }
+  function fail() {
+    tone(330, { dur: 0.22, vol: 0.22, type: 'triangle' });
+    tone(247, { dur: 0.32, vol: 0.22, type: 'triangle', delay: 0.18 });
+  }
+  function levelUp() {
+    [659, 784, 988, 1175, 1568].forEach((f, i) =>
+      tone(f, { dur: 0.18, vol: 0.24, type: 'triangle', delay: i * 0.06 }));
+    noiseHit({ dur: 0.4, vol: 0.06, filterFreq: 5000, delay: 0.05 });
+  }
+  function levelDown() {
+    [659, 523, 392].forEach((f, i) =>
+      tone(f, { dur: 0.22, vol: 0.20, type: 'triangle', delay: i * 0.10 }));
+  }
+
+  // === COMPLEX SOUNDS — shop / officina ===
+  function openShop() {
+    [392, 523, 659, 784, 988, 1175].forEach((f, i) =>
+      tone(f, { dur: 0.50, vol: 0.16, type: 'triangle', delay: i * 0.045 }));
+    tone(1568, { dur: 0.6, vol: 0.10, type: 'sine', delay: 0.3 });
+    noiseHit({ dur: 0.3, vol: 0.05, filterFreq: 4000, delay: 0.1 });
+  }
+  function closeShop() {
+    [988, 784, 659, 523, 392].forEach((f, i) =>
+      tone(f, { dur: 0.16, vol: 0.14, type: 'triangle', delay: i * 0.04 }));
+  }
+  function tabSwitch() {
+    tone(660, { dur: 0.05, vol: 0.13, type: 'sine' });
+    tone(990, { dur: 0.07, vol: 0.13, type: 'sine', delay: 0.04 });
+  }
+  function purchaseMagic() {
+    // Bell-like fundamental + harmonics
+    const base = 523;
+    [1, 2, 3, 4].forEach((mult) => {
+      tone(base * mult, { dur: 0.8, vol: 0.16 / mult, type: 'sine', atk: 0.005 });
+    });
+    // Rising arpeggio
+    [659, 784, 988, 1175, 1319, 1568].forEach((f, i) =>
+      tone(f, { dur: 0.18, vol: 0.18, type: 'triangle', delay: 0.12 + i * 0.06 }));
+    // Sparkles
+    for (let i = 0; i < 8; i++) {
+      const f = 1800 + Math.random() * 2800;
+      tone(f, { dur: 0.16 + Math.random() * 0.18, vol: 0.07, type: 'sine', delay: 0.2 + i * 0.05 });
+    }
+    noiseHit({ dur: 0.5, vol: 0.04, filterFreq: 6500, filterType: 'highpass' });
+  }
+  function equipClick() {
+    tone(740, { dur: 0.04, vol: 0.16, type: 'square' });
+    tone(440, { dur: 0.06, vol: 0.16, type: 'square', delay: 0.04 });
+    noiseHit({ dur: 0.05, vol: 0.06, filterFreq: 1500, filterType: 'lowpass' });
+  }
+  function unequipClick() {
+    tone(440, { dur: 0.06, vol: 0.16, type: 'square' });
+    tone(294, { dur: 0.08, vol: 0.14, type: 'square', delay: 0.04 });
+  }
+  function denied() {
+    tone(180, { dur: 0.14, vol: 0.16, type: 'sawtooth' });
+    tone(170, { dur: 0.18, vol: 0.16, type: 'sawtooth', delay: 0.10 });
+  }
+  function growShrink(grew) {
+    if (!ready()) return;
+    const t = ctx.currentTime;
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = 'triangle';
+    if (grew) {
+      o.frequency.setValueAtTime(196, t);
+      o.frequency.exponentialRampToValueAtTime(880, t + 0.7);
+    } else {
+      o.frequency.setValueAtTime(880, t);
+      o.frequency.exponentialRampToValueAtTime(196, t + 0.7);
+    }
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(0.20, t + 0.06);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.7);
+    o.connect(g).connect(master);
+    o.start(t);
+    o.stop(t + 0.72);
+    if (grew) {
+      [1319, 1568, 1976].forEach((f, i) =>
+        tone(f, { dur: 0.30, vol: 0.10, type: 'sine', delay: 0.35 + i * 0.07 }));
+    }
+  }
+  function atmosphere() {
+    // Whoosh (band-passed noise sweep) + bell tail
+    if (!ready()) return;
+    const t = ctx.currentTime;
+    const dur = 0.7;
+    const buffer = ctx.createBuffer(1, Math.floor(ctx.sampleRate * dur), ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < data.length; i++) data[i] = (Math.random()*2 - 1) * 0.4;
+    const src = ctx.createBufferSource();
+    src.buffer = buffer;
+    const f = ctx.createBiquadFilter();
+    f.type = 'bandpass';
+    f.Q.value = 2;
+    f.frequency.setValueAtTime(400, t);
+    f.frequency.linearRampToValueAtTime(2400, t + dur * 0.55);
+    f.frequency.linearRampToValueAtTime(800, t + dur);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(0.16, t + 0.1);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    src.connect(f).connect(g).connect(master);
+    src.start(t);
+    src.stop(t + dur + 0.02);
+    tone(880, { dur: 0.6, vol: 0.10, type: 'sine', delay: 0.2 });
+    tone(1319, { dur: 0.5, vol: 0.08, type: 'sine', delay: 0.3 });
+  }
+
+  return {
+    init, toggleMute, isMuted,
+    uiTap, startGame, flashTone, tapOk, tapWrong, success, fail, levelUp, levelDown,
+    openShop, closeShop, tabSwitch, purchaseMagic, equipClick, unequipClick, denied, growShrink, atmosphere
+  };
+})();
+
+// ----- ZPD logic -----
+// 3 successi consecutivi → livello su
+// 2 fallimenti consecutivi → livello giù (mai sotto minLevel)
+function recordResult(exId, success) {
+  const ex = state.exercises[exId];
+  const cfg = EXERCISES.find(e => e.id === exId);
+  ex.totalRounds++;
+  state.totalSessions++;
+  let change = null;
+  if (success) {
+    ex.successStreak++;
+    ex.failStreak = 0;
+    ex.totalStars++;
+    if (ex.successStreak >= 3 && ex.level < cfg.maxLevel) {
+      ex.level++;
+      ex.successStreak = 0;
+      ex.bestLevel = Math.max(ex.level, ex.bestLevel);
+      change = 'up';
+    }
+  } else {
+    ex.failStreak++;
+    ex.successStreak = 0;
+    if (ex.failStreak >= 2 && ex.level > cfg.minLevel) {
+      ex.level--;
+      ex.failStreak = 0;
+      change = 'down';
+    }
+  }
+  saveState();
+  return { change, newLevel: ex.level, streak: ex.successStreak, failStreak: ex.failStreak };
+}
+
+// ----- Render dashboard -----
+function renderDashboard() {
+  document.getElementById('childNameLabel').textContent = state.childName || 'Imposta nome';
+  document.getElementById('greetingName').textContent = state.childName || 'amico';
+  document.getElementById('totalSessions').textContent = state.totalSessions;
+  const avgLevel = (Object.values(state.exercises).reduce((s, e) => s + e.level, 0) / EXERCISES.length).toFixed(1);
+  document.getElementById('avgLevel').textContent = avgLevel;
+
+  // Officina shop card preview + stars
+  const stars = availableStars();
+  document.getElementById('starsAvailableHome').textContent = stars;
+  buildShopPreview();
+
+  const map = document.getElementById('exercisesMap');
+  map.innerHTML = '';
+  EXERCISES.forEach(ex => {
+    const data = state.exercises[ex.id];
+    const dotsHtml = Array.from({length: 3}, (_, i) =>
+      `<span class="ex-star ${i < data.successStreak ? 'on' : ''}"></span>`
+    ).join('');
+    const card = document.createElement('div');
+    card.className = `exercise-card theme-${ex.theme}`;
+    card.innerHTML = `
+      <div class="ex-icon">${ex.icon}</div>
+      <h3>${ex.name}</h3>
+      <p class="ex-desc">${ex.desc}</p>
+      <div class="ex-progress">
+        <div class="ex-level-info">
+          <span class="ex-level-label">Livello</span>
+          <span class="ex-level-num">${data.level}<em>/${ex.maxLevel}</em></span>
+        </div>
+        <div class="ex-stars" title="Successi consecutivi al livello">${dotsHtml}</div>
+      </div>
+    `;
+    card.addEventListener('click', () => openExercise(ex.id));
+    map.appendChild(card);
+  });
+}
+
+// ----- View switching -----
+let currentExerciseId = null;
+function openExercise(exId) {
+  currentExerciseId = exId;
+  document.getElementById('dashboardView').style.display = 'none';
+  const view = document.getElementById('exerciseView');
+  view.classList.add('active');
+  const ex = EXERCISES.find(e => e.id === exId);
+  const data = state.exercises[exId];
+  // Scope CSS variable for theme on this view
+  view.style.setProperty('--card-color', getCSSVar(`--${themeColorVar(ex.theme)}-deep`));
+  view.style.setProperty('--card-tint', themeTint(ex.theme));
+  // Header meta
+  document.getElementById('exMeta').innerHTML = `
+    <div class="ex-meta-pill">${ex.name}</div>
+    <div class="ex-meta-pill">Livello <em>${data.level}</em></div>
+    <div class="ex-meta-pill">⭐ <em>${data.totalStars}</em></div>
+  `;
+  showInstructions(ex, data);
+  document.getElementById('roundProgress').style.width = '0%';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function closeExercise() {
+  // Cleanup timer attivi
+  if (attentionTimerId) { clearInterval(attentionTimerId); attentionTimerId = null; }
+  if (gngState && gngState.timeoutId) { clearTimeout(gngState.timeoutId); gngState = null; }
+  cleanupMoving();
+  document.getElementById('exerciseView').classList.remove('active');
+  document.getElementById('dashboardView').style.display = '';
+  currentExerciseId = null;
+  renderDashboard();
+}
+
+function getCSSVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+function themeColorVar(theme) {
+  return ({rose:'rose', mint:'mint', sky:'sky', peach:'peach', lavender:'lavender'})[theme];
+}
+function themeTint(theme) {
+  return ({rose:'#FBEBEB', mint:'#E8F2E8', sky:'#E5EEF6', peach:'#FBEBDB', lavender:'#EFE7F4'})[theme];
+}
+
+// ----- Generic instructions / feedback screens -----
+function showInstructions(ex, data) {
+  const area = document.getElementById('playArea');
+  area.innerHTML = `
+    <div class="play-state active">
+      <div class="instructions">
+        <div class="ill" style="background: ${themeTint(ex.theme)}">${ex.icon.replace('viewBox="0 0 64 64"', 'viewBox="0 0 64 64" width="68" height="68"')}</div>
+        <h2>${ex.name.split(' ').slice(0,-1).join(' ')} <em>${ex.name.split(' ').slice(-1)}</em></h2>
+        <p>${ex.desc}</p>
+        <button class="btn primary large" id="startBtn">Inizia · Livello ${data.level}</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('startBtn').addEventListener('click', () => {
+    audio.startGame();
+    ex.init(data.level);
+  });
+}
+
+function showFeedback(success, exId, change) {
+  const ex = EXERCISES.find(e => e.id === exId);
+  const data = state.exercises[exId];
+  const area = document.getElementById('playArea');
+  let levelChangeHtml = '';
+  if (change === 'up') {
+    levelChangeHtml = `<div class="level-change up">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 14 12 8 18 14"/></svg>
+      Hai consolidato il livello! Ora sei al livello ${data.level}.
+    </div>`;
+    fireConfetti();
+  } else if (change === 'down') {
+    levelChangeHtml = `<div class="level-change down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 10 12 16 18 10"/></svg>
+      Torniamo un passo indietro per consolidare. Livello ${data.level}.
+    </div>`;
+  } else {
+    levelChangeHtml = `<div class="level-change steady">
+      Livello ${data.level} · Streak ${data.successStreak} di 3
+    </div>`;
+  }
+
+  area.innerHTML = `
+    <div class="play-state active">
+      <div class="feedback">
+        <div class="feedback-icon ${success ? 'success' : 'fail'}">
+          ${success
+            ? `<svg viewBox="0 0 24 24" fill="none" stroke="#7FA37F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 13 10 18 19 7"/></svg>`
+            : `<svg viewBox="0 0 24 24" fill="none" stroke="#C97862" stroke-width="3" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><circle cx="12" cy="16" r="1.2" fill="#C97862"/></svg>`
+          }
+        </div>
+        <h2>${success ? 'Bravissimo!' : 'Quasi!'}</h2>
+        <p>${success ? 'Hai completato il livello con successo.' : 'Riproviamo: ogni errore è un passo verso il successo.'}</p>
+        ${levelChangeHtml}
+        <div class="feedback-actions">
+          <button class="btn ghost" id="backToMapBtn">Mappa</button>
+          <button class="btn primary" id="nextRoundBtn">Continua</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('roundProgress').style.width = '100%';
+  document.getElementById('exMeta').innerHTML = `
+    <div class="ex-meta-pill">${ex.name}</div>
+    <div class="ex-meta-pill">Livello <em>${data.level}</em></div>
+    <div class="ex-meta-pill">⭐ <em>${data.totalStars}</em></div>
+  `;
+  document.getElementById('nextRoundBtn').addEventListener('click', () => {
+    document.getElementById('roundProgress').style.width = '0%';
+    ex.init(data.level);
+  });
+  document.getElementById('backToMapBtn').addEventListener('click', closeExercise);
+}
+
+function setRoundProgress(pct) {
+  document.getElementById('roundProgress').style.width = pct + '%';
+}
+
+// ============================================================
+// EXERCISE 1 — SEQUENZA MAGICA (Simon-like)
+// ============================================================
+const SEQ_COLORS = [
+  { bg: '#F4C2C2', flash: '#E89B9B', shape: 'circle' },
+  { bg: '#BFD6E8', flash: '#8FB4D0', shape: 'square' },
+  { bg: '#C5E1C5', flash: '#95C295', shape: 'triangle' },
+  { bg: '#F5CFA8', flash: '#E8AC7A', shape: 'heart' }
+];
+
+function initSequence(level) {
+  const sequence = [];
+  for (let i = 0; i < level; i++) sequence.push(Math.floor(Math.random() * 4));
+  const area = document.getElementById('playArea');
+  area.innerHTML = `
+    <div class="play-state active">
+      <div class="watch-label" id="seqLabel">Guarda...</div>
+      <div class="seq-board" id="seqBoard"></div>
+    </div>
+  `;
+  const board = document.getElementById('seqBoard');
+  SEQ_COLORS.forEach((c, idx) => {
+    const cell = document.createElement('button');
+    cell.className = 'seq-cell disabled';
+    cell.style.background = c.bg;
+    cell.dataset.idx = idx;
+    cell.innerHTML = renderShape(c.shape, '#FAF5ED');
+    board.appendChild(cell);
+  });
+  setRoundProgress(20);
+  setTimeout(() => playSequence(sequence), 600);
+}
+
+function playSequence(sequence) {
+  const cells = document.querySelectorAll('#seqBoard .seq-cell');
+  let i = 0;
+  const flashNext = () => {
+    if (i >= sequence.length) {
+      document.getElementById('seqLabel').textContent = 'Tocca tu adesso!';
+      document.getElementById('seqLabel').classList.add('player');
+      cells.forEach(c => c.classList.remove('disabled'));
+      setRoundProgress(60);
+      collectInput(sequence);
+      return;
+    }
+    const cell = cells[sequence[i]];
+    cell.classList.add('flash');
+    audio.flashTone(sequence[i]);
+    setTimeout(() => cell.classList.remove('flash'), 460);
+    i++;
+    setTimeout(flashNext, 720);
+  };
+  flashNext();
+}
+
+function collectInput(sequence) {
+  const cells = document.querySelectorAll('#seqBoard .seq-cell');
+  const input = [];
+  const onClick = (e) => {
+    const idx = parseInt(e.currentTarget.dataset.idx);
+    const cell = e.currentTarget;
+    cell.classList.add('flash');
+    setTimeout(() => cell.classList.remove('flash'), 320);
+    input.push(idx);
+    if (input[input.length-1] !== sequence[input.length-1]) {
+      audio.tapWrong();
+      cells.forEach(c => { c.classList.add('disabled'); c.removeEventListener('click', onClick); });
+      setTimeout(() => finishRound('sequence', false), 600);
+      return;
+    }
+    audio.tapOk(idx);
+    if (input.length === sequence.length) {
+      cells.forEach(c => { c.classList.add('disabled'); c.removeEventListener('click', onClick); });
+      setTimeout(() => finishRound('sequence', true), 500);
+    }
+  };
+  cells.forEach(c => c.addEventListener('click', onClick));
+}
+
+// ============================================================
+// EXERCISE 2 — CASTELLO DI MEMORIA (Corsi-like)
+// ============================================================
+function initSpatial(level) {
+  const total = 16;
+  const sequence = [];
+  const used = new Set();
+  while (sequence.length < level) {
+    const idx = Math.floor(Math.random() * total);
+    if (!used.has(idx)) { used.add(idx); sequence.push(idx); }
+  }
+  const area = document.getElementById('playArea');
+  area.innerHTML = `
+    <div class="play-state active">
+      <div class="watch-label" id="corsiLabel">Memorizza l'ordine...</div>
+      <div class="corsi-grid" id="corsiGrid"></div>
+    </div>
+  `;
+  const grid = document.getElementById('corsiGrid');
+  for (let i = 0; i < total; i++) {
+    const cell = document.createElement('button');
+    cell.className = 'corsi-cell disabled';
+    cell.dataset.idx = i;
+    grid.appendChild(cell);
+  }
+  setRoundProgress(20);
+  setTimeout(() => playCorsi(sequence), 700);
+}
+
+function playCorsi(sequence) {
+  const cells = document.querySelectorAll('#corsiGrid .corsi-cell');
+  let i = 0;
+  const flashNext = () => {
+    if (i >= sequence.length) {
+      document.getElementById('corsiLabel').textContent = 'Tocca le caselle in ordine!';
+      document.getElementById('corsiLabel').classList.add('player');
+      cells.forEach(c => c.classList.remove('disabled'));
+      setRoundProgress(60);
+      collectCorsiInput(sequence);
+      return;
+    }
+    const cell = cells[sequence[i]];
+    cell.classList.add('flash');
+    audio.flashTone(i);
+    setTimeout(() => cell.classList.remove('flash'), 540);
+    i++;
+    setTimeout(flashNext, 800);
+  };
+  flashNext();
+}
+
+function collectCorsiInput(sequence) {
+  const cells = document.querySelectorAll('#corsiGrid .corsi-cell');
+  const input = [];
+  const onClick = (e) => {
+    const idx = parseInt(e.currentTarget.dataset.idx);
+    const cell = e.currentTarget;
+    if (input.includes(idx)) return;
+    input.push(idx);
+    if (input[input.length-1] !== sequence[input.length-1]) {
+      audio.tapWrong();
+      cell.classList.add('error');
+      cells.forEach(c => { c.classList.add('disabled'); c.removeEventListener('click', onClick); });
+      setTimeout(() => finishRound('spatial', false), 700);
+      return;
+    }
+    audio.tapOk(input.length - 1);
+    cell.classList.add('player');
+    if (input.length === sequence.length) {
+      cells.forEach(c => { c.classList.add('disabled'); c.removeEventListener('click', onClick); });
+      setTimeout(() => finishRound('spatial', true), 500);
+    }
+  };
+  cells.forEach(c => c.addEventListener('click', onClick));
+}
+
+// ============================================================
+// EXERCISE 3 — FORZIERE INVERSO (Backward digit span)
+// ============================================================
+function initReverse(level) {
+  const sequence = [];
+  for (let i = 0; i < level; i++) sequence.push(Math.floor(Math.random() * 9) + 1);
+  const area = document.getElementById('playArea');
+  area.innerHTML = `
+    <div class="play-state active">
+      <div class="watch-label" id="revLabel">Memorizza i numeri...</div>
+      <div class="rev-display" id="revDisplay"><div class="rev-symbol" id="revSymbol">·</div></div>
+    </div>
+  `;
+  setRoundProgress(20);
+  setTimeout(() => playReverseSequence(sequence), 600);
+}
+
+function playReverseSequence(sequence) {
+  const symbol = document.getElementById('revSymbol');
+  let i = 0;
+  const showNext = () => {
+    if (i >= sequence.length) {
+      symbol.textContent = '?';
+      setTimeout(() => collectReverseInput(sequence), 500);
+      return;
+    }
+    symbol.style.animation = 'none';
+    void symbol.offsetWidth;
+    symbol.style.animation = '';
+    symbol.textContent = sequence[i];
+    audio.flashTone(sequence[i] - 1);
+    i++;
+    setTimeout(showNext, 1100);
+  };
+  showNext();
+}
+
+function collectReverseInput(sequence) {
+  const expected = [...sequence].reverse();
+  const area = document.getElementById('playArea');
+  area.innerHTML = `
+    <div class="play-state active">
+      <div class="watch-label player">Ripeti i numeri al <em style="font-style:italic">contrario</em>:</div>
+      <div class="rev-input-display" id="revInputDisplay"></div>
+      <div class="rev-pad" id="revPad"></div>
+    </div>
+  `;
+  setRoundProgress(60);
+  // Build keypad 1-9
+  const pad = document.getElementById('revPad');
+  for (let n = 1; n <= 9; n++) {
+    const k = document.createElement('button');
+    k.className = 'rev-key';
+    k.textContent = n;
+    k.dataset.n = n;
+    pad.appendChild(k);
+  }
+  const display = document.getElementById('revInputDisplay');
+  const slots = expected.map(() => '<span class="empty"></span>');
+  display.innerHTML = slots.join('');
+  const input = [];
+  const onClick = (e) => {
+    const n = parseInt(e.currentTarget.dataset.n);
+    input.push(n);
+    const idx = input.length - 1;
+    slots[idx] = `<span>${n}</span>`;
+    display.innerHTML = slots.join('');
+    if (input[idx] !== expected[idx]) {
+      audio.tapWrong();
+      pad.querySelectorAll('.rev-key').forEach(k => k.classList.add('disabled'));
+      setTimeout(() => finishRound('reverse', false), 600);
+      return;
+    }
+    audio.tapOk(n - 1);
+    if (input.length === expected.length) {
+      pad.querySelectorAll('.rev-key').forEach(k => k.classList.add('disabled'));
+      setTimeout(() => finishRound('reverse', true), 500);
+    }
+  };
+  pad.querySelectorAll('.rev-key').forEach(k => k.addEventListener('click', onClick));
+}
+
+// ============================================================
+// EXERCISE 4 — CACCIA AL TESORO (selective attention / visual search)
+// ============================================================
+const ATTENTION_CONFIG = [
+  { gridCols: 4, gridRows: 4, targets: 3, distractors: ['circle','square','triangle'], time: 25 },
+  { gridCols: 5, gridRows: 4, targets: 4, distractors: ['circle','square','triangle'], time: 25 },
+  { gridCols: 5, gridRows: 5, targets: 5, distractors: ['circle','square','triangle','heart'], time: 25 },
+  { gridCols: 6, gridRows: 5, targets: 6, distractors: ['circle','square','triangle','heart','diamond'], time: 28 },
+  { gridCols: 6, gridRows: 6, targets: 7, distractors: ['circle','square','triangle','heart','diamond','flower'], time: 30 },
+  { gridCols: 7, gridRows: 6, targets: 8, distractors: ['circle','square','triangle','heart','diamond','flower'], time: 32 },
+  { gridCols: 8, gridRows: 6, targets: 9, distractors: ['circle','square','triangle','heart','diamond','flower'], time: 32 },
+  { gridCols: 8, gridRows: 7, targets: 10, distractors: ['circle','square','triangle','heart','diamond','flower'], time: 34 }
+];
+
+let attentionTimerId = null;
+function initAttention(level) {
+  const cfg = ATTENTION_CONFIG[Math.min(level - 1, ATTENTION_CONFIG.length - 1)];
+  const total = cfg.gridCols * cfg.gridRows;
+  // Build cells
+  const cells = [];
+  // place targets
+  const targetIndices = new Set();
+  while (targetIndices.size < cfg.targets) targetIndices.add(Math.floor(Math.random() * total));
+  for (let i = 0; i < total; i++) {
+    if (targetIndices.has(i)) cells.push('star');
+    else cells.push(cfg.distractors[Math.floor(Math.random() * cfg.distractors.length)]);
+  }
+  const cellSize = Math.max(46, Math.min(64, Math.floor(540 / cfg.gridCols)));
+  const area = document.getElementById('playArea');
+  area.innerHTML = `
+    <div class="play-state active">
+      <div class="attention-target-show">
+        <span class="label">Trova tutte le</span>
+        ${SHAPE_LIBRARY.star}
+        <span class="timer-display" id="attTimer">${cfg.time}s</span>
+      </div>
+      <div class="attention-grid" id="attentionGrid" style="grid-template-columns: repeat(${cfg.gridCols}, ${cellSize}px);"></div>
+      <div class="gng-counter" style="margin-top:18px">Trovate: <span id="attFound">0</span> / ${cfg.targets}</div>
+    </div>
+  `;
+  const grid = document.getElementById('attentionGrid');
+  cells.forEach((shape, i) => {
+    const c = document.createElement('button');
+    c.className = 'attention-cell';
+    c.style.width = cellSize + 'px';
+    c.style.height = cellSize + 'px';
+    c.dataset.shape = shape;
+    c.dataset.idx = i;
+    c.innerHTML = SHAPE_LIBRARY[shape];
+    grid.appendChild(c);
+  });
+  setRoundProgress(40);
+  let timeLeft = cfg.time;
+  let found = 0;
+  let misses = 0;
+  const timerEl = document.getElementById('attTimer');
+  const foundEl = document.getElementById('attFound');
+  attentionTimerId = setInterval(() => {
+    timeLeft--;
+    timerEl.textContent = timeLeft + 's';
+    setRoundProgress(40 + ((cfg.time - timeLeft) / cfg.time) * 50);
+    if (timeLeft <= 0) {
+      clearInterval(attentionTimerId);
+      finishAttention(found, cfg.targets, misses);
+    }
+  }, 1000);
+  const onClick = (e) => {
+    const cell = e.currentTarget;
+    if (cell.classList.contains('found')) return;
+    if (cell.dataset.shape === 'star') {
+      cell.classList.add('found');
+      audio.tapOk(found);
+      found++;
+      foundEl.textContent = found;
+      if (found === cfg.targets) {
+        clearInterval(attentionTimerId);
+        finishAttention(found, cfg.targets, misses);
+      }
+    } else {
+      cell.classList.add('miss');
+      audio.tapWrong();
+      misses++;
+      setTimeout(() => cell.classList.remove('miss'), 350);
+    }
+  };
+  grid.querySelectorAll('.attention-cell').forEach(c => c.addEventListener('click', onClick));
+}
+
+function finishAttention(found, total, misses) {
+  document.querySelectorAll('#attentionGrid .attention-cell').forEach(c => c.style.pointerEvents = 'none');
+  // Successo: tutti i target trovati e errori ≤ 1
+  const success = found === total && misses <= 1;
+  setTimeout(() => finishRound('attention', success), 600);
+}
+
+// ============================================================
+// EXERCISE 5 — STELLA O TEMPESTA (Go/No-Go)
+// ============================================================
+const GNG_CONFIG = [
+  { trials: 8,  noGoRatio: 0.3, isi: 1500 },
+  { trials: 10, noGoRatio: 0.35, isi: 1300 },
+  { trials: 12, noGoRatio: 0.4, isi: 1200 },
+  { trials: 14, noGoRatio: 0.4, isi: 1050 },
+  { trials: 16, noGoRatio: 0.45, isi: 950 },
+  { trials: 18, noGoRatio: 0.5, isi: 850 }
+];
+
+let gngState = null;
+function initGoNoGo(level) {
+  const cfg = GNG_CONFIG[Math.min(level - 1, GNG_CONFIG.length - 1)];
+  // build trials
+  const trials = [];
+  for (let i = 0; i < cfg.trials; i++) trials.push(Math.random() < cfg.noGoRatio ? 'cloud' : 'star');
+  // ensure at least one of each
+  if (!trials.includes('star')) trials[0] = 'star';
+  if (!trials.includes('cloud')) trials[trials.length-1] = 'cloud';
+
+  const area = document.getElementById('playArea');
+  area.innerHTML = `
+    <div class="play-state active">
+      <div class="gng-layout">
+        <div class="gng-targets-info">
+          <div>${SHAPE_LIBRARY.star}<span class="lbl">tocca</span></div>
+          <div>${SHAPE_LIBRARY.cloud}<span class="lbl">non toccare</span></div>
+        </div>
+        <div class="gng-stage" id="gngStage">
+          <div class="gng-stimulus" id="gngStimulus" style="opacity:0">${SHAPE_LIBRARY.star}</div>
+        </div>
+        <button class="gng-tap-btn" id="gngTap">TOCCA</button>
+        <div class="gng-counter">Prova <em id="gngTrial">1</em> / ${cfg.trials}</div>
+      </div>
+    </div>
+  `;
+  gngState = { trials, idx: 0, correct: 0, cfg, currentStimulus: null, responded: false, timeoutId: null };
+  setRoundProgress(20);
+
+  document.getElementById('gngTap').addEventListener('click', onGngTap);
+  setTimeout(nextGngTrial, 800);
+}
+
+function nextGngTrial() {
+  if (!gngState) return;
+  const { trials, idx, cfg } = gngState;
+  if (idx >= trials.length) {
+    finishGoNoGo();
+    return;
+  }
+  document.getElementById('gngTrial').textContent = idx + 1;
+  setRoundProgress(20 + (idx / trials.length) * 70);
+  const stim = trials[idx];
+  gngState.currentStimulus = stim;
+  gngState.responded = false;
+  const stimEl = document.getElementById('gngStimulus');
+  stimEl.style.animation = 'none';
+  void stimEl.offsetWidth;
+  stimEl.style.animation = '';
+  stimEl.innerHTML = SHAPE_LIBRARY[stim];
+  stimEl.style.opacity = '1';
+  // Wait for response window
+  gngState.timeoutId = setTimeout(() => {
+    if (!gngState.responded) {
+      // No tap = correct only if cloud
+      if (stim === 'cloud') {
+        gngState.correct++;
+        flashTapBtn('correct');
+      } else {
+        flashTapBtn('wrong');
+      }
+    }
+    stimEl.style.opacity = '0';
+    gngState.idx++;
+    setTimeout(nextGngTrial, 350);
+  }, gngState.cfg.isi);
+}
+
+function onGngTap() {
+  if (!gngState || gngState.responded || !gngState.currentStimulus) return;
+  gngState.responded = true;
+  clearTimeout(gngState.timeoutId);
+  if (gngState.currentStimulus === 'star') {
+    gngState.correct++;
+    flashTapBtn('correct');
+  } else {
+    flashTapBtn('wrong');
+  }
+  document.getElementById('gngStimulus').style.opacity = '0';
+  gngState.idx++;
+  setTimeout(nextGngTrial, 350);
+}
+
+function flashTapBtn(kind) {
+  const btn = document.getElementById('gngTap');
+  if (!btn) return;
+  btn.classList.add('flash-' + kind);
+  if (kind === 'correct') audio.tapOk(2);
+  else audio.tapWrong();
+  setTimeout(() => btn.classList.remove('flash-' + kind), 250);
+}
+
+function finishGoNoGo() {
+  const { correct, trials } = gngState;
+  const accuracy = correct / trials.length;
+  // Successo se ≥ 80% corretto
+  const success = accuracy >= 0.8;
+  gngState = null;
+  finishRound('gonogo', success);
+}
+
+// ============================================================
+// EXERCISE 6 — COSTELLAZIONE VAGANTE (moving irregular shapes)
+// ============================================================
+const MOVING_SHAPES = [
+  { color: '#E89B9B', path: 'M 25 40 C 15 25, 35 10, 55 18 C 75 12, 90 30, 82 50 C 95 65, 80 90, 60 82 C 40 95, 20 80, 28 60 C 15 55, 18 45, 25 40 Z' },
+  { color: '#8FB4D0', path: 'M 30 12 C 60 5, 90 25, 85 55 C 95 75, 70 92, 45 88 C 18 92, 8 65, 18 40 C 15 22, 22 15, 30 12 Z' },
+  { color: '#95C295', path: 'M 50 8 C 80 15, 92 40, 80 65 C 78 85, 50 95, 35 88 C 12 75, 8 45, 25 25 C 32 12, 42 8, 50 8 Z' },
+  { color: '#B498D0', path: 'M 12 50 C 8 32, 32 18, 55 25 C 80 18, 95 38, 88 58 C 92 75, 72 88, 52 80 C 28 88, 8 70, 12 50 Z' },
+  { color: '#C99A4B', path: 'M 40 12 C 58 6, 72 18, 75 35 C 90 38, 92 56, 78 66 C 85 82, 62 90, 52 78 C 38 92, 20 82, 25 65 C 10 58, 15 36, 32 32 C 30 22, 32 16, 40 12 Z' }
+];
+
+let movingState = null;
+
+function cleanupMoving() {
+  if (movingState) {
+    movingState.running = false;
+    if (movingState.rafId) cancelAnimationFrame(movingState.rafId);
+    movingState = null;
+  }
+}
+
+function initMoving(level) {
+  cleanupMoving();
+  const sequence = [];
+  for (let i = 0; i < level; i++) sequence.push(Math.floor(Math.random() * MOVING_SHAPES.length));
+  const area = document.getElementById('playArea');
+  area.innerHTML = `
+    <div class="play-state active">
+      <div class="watch-label" id="movLabel">Guarda l'ordine...</div>
+      <div class="moving-stage" id="movingStage"></div>
+    </div>
+  `;
+  const stage = document.getElementById('movingStage');
+  // attendiamo il layout per leggere le dimensioni reali
+  requestAnimationFrame(() => {
+    const rect = stage.getBoundingClientRect();
+    const stageW = rect.width;
+    const stageH = rect.height;
+    const isMobile = window.innerWidth <= 760;
+    const size = isMobile ? 62 : 78;
+
+    const shapes = MOVING_SHAPES.map((s, idx) => {
+      const el = document.createElement('button');
+      el.className = 'moving-shape disabled';
+      el.dataset.idx = idx;
+      el.setAttribute('aria-label', 'Forma ' + (idx + 1));
+      el.innerHTML = `<svg viewBox="0 0 100 100"><path d="${s.path}" fill="${s.color}"/></svg>`;
+      stage.appendChild(el);
+
+      // Posizione iniziale distribuita orizzontalmente, jitter verticale
+      const cols = MOVING_SHAPES.length;
+      const slotW = (stageW - size) / (cols - 1);
+      const x = idx * slotW;
+      const y = 20 + Math.random() * (stageH - size - 40);
+      // Velocità lenta, direzione casuale
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 22 + Math.random() * 14; // px/s, lento
+      return {
+        el, x, y, size,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed
+      };
+    });
+    shapes.forEach(s => { s.el.style.transform = `translate(${s.x}px, ${s.y}px)`; });
+
+    movingState = { shapes, stageW, stageH, size, running: true, lastTime: null, rafId: null };
+    movingState.rafId = requestAnimationFrame(animateMoving);
+
+    setRoundProgress(20);
+    setTimeout(() => playMovingSequence(sequence), 900);
+  });
+}
+
+function animateMoving(time) {
+  if (!movingState || !movingState.running) return;
+  if (movingState.lastTime === null) movingState.lastTime = time;
+  const dt = Math.min((time - movingState.lastTime) / 1000, 0.05);
+  movingState.lastTime = time;
+  const { stageW, stageH, size } = movingState;
+  movingState.shapes.forEach(s => {
+    s.x += s.vx * dt;
+    s.y += s.vy * dt;
+    if (s.x < 0) { s.x = 0; s.vx = Math.abs(s.vx); }
+    else if (s.x > stageW - size) { s.x = stageW - size; s.vx = -Math.abs(s.vx); }
+    if (s.y < 0) { s.y = 0; s.vy = Math.abs(s.vy); }
+    else if (s.y > stageH - size) { s.y = stageH - size; s.vy = -Math.abs(s.vy); }
+    s.el.style.transform = `translate(${s.x}px, ${s.y}px)`;
+  });
+  movingState.rafId = requestAnimationFrame(animateMoving);
+}
+
+function playMovingSequence(sequence) {
+  let i = 0;
+  const flashNext = () => {
+    if (!movingState) return;
+    if (i >= sequence.length) {
+      const lbl = document.getElementById('movLabel');
+      if (lbl) { lbl.textContent = 'Tocca tu adesso!'; lbl.classList.add('player'); }
+      movingState.shapes.forEach(s => s.el.classList.remove('disabled'));
+      setRoundProgress(60);
+      collectMovingInput(sequence);
+      return;
+    }
+    const sh = movingState.shapes[sequence[i]];
+    sh.el.classList.add('flash');
+    audio.flashTone(sequence[i]);
+    setTimeout(() => { if (sh.el) sh.el.classList.remove('flash'); }, 600);
+    i++;
+    setTimeout(flashNext, 950);
+  };
+  flashNext();
+}
+
+function collectMovingInput(sequence) {
+  if (!movingState) return;
+  const input = [];
+  const onClick = (e) => {
+    const el = e.currentTarget;
+    const idx = parseInt(el.dataset.idx);
+    el.classList.add('flash');
+    setTimeout(() => el.classList.remove('flash'), 500);
+    input.push(idx);
+    if (input[input.length-1] !== sequence[input.length-1]) {
+      audio.tapWrong();
+      movingState.shapes.forEach(s => { s.el.classList.add('disabled'); s.el.removeEventListener('click', onClick); });
+      setTimeout(() => { cleanupMoving(); finishRound('moving', false); }, 600);
+      return;
+    }
+    audio.tapOk(idx);
+    if (input.length === sequence.length) {
+      movingState.shapes.forEach(s => { s.el.classList.add('disabled'); s.el.removeEventListener('click', onClick); });
+      setTimeout(() => { cleanupMoving(); finishRound('moving', true); }, 500);
+    }
+  };
+  movingState.shapes.forEach(s => s.el.addEventListener('click', onClick));
+}
+
+// ============================================================
+// FINISH ROUND — common
+// ============================================================
+function finishRound(exId, success) {
+  const result = recordResult(exId, success);
+  if (success) {
+    audio.success();
+    if (result.change === 'up') setTimeout(() => audio.levelUp(), 700);
+  } else {
+    audio.fail();
+    if (result.change === 'down') setTimeout(() => audio.levelDown(), 700);
+  }
+  showFeedback(success, exId, result.change);
+  renderDashboard(); // background-update map data
+}
+
+// ============================================================
+// SHAPE RENDER HELPER for sequence cells
+// ============================================================
+function renderShape(shape, color) {
+  const shapes = {
+    circle: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" fill="${color}"/></svg>`,
+    square: `<svg viewBox="0 0 64 64"><rect x="14" y="14" width="36" height="36" rx="6" fill="${color}"/></svg>`,
+    triangle: `<svg viewBox="0 0 64 64"><path d="M32 12 L 54 50 L 10 50 Z" fill="${color}"/></svg>`,
+    heart: `<svg viewBox="0 0 64 64"><path d="M32 52 L 14 32 Q 8 22 16 16 Q 24 12 32 22 Q 40 12 48 16 Q 56 22 50 32 Z" fill="${color}"/></svg>`,
+  };
+  return shapes[shape] || shapes.circle;
+}
+
+// ============================================================
+// CONFETTI
+// ============================================================
+function fireConfetti() {
+  const colors = ['#E89B9B', '#95C295', '#8FB4D0', '#E8AC7A', '#B498D0', '#D4A574'];
+  const pieces = 40;
+  for (let i = 0; i < pieces; i++) {
+    const p = document.createElement('div');
+    p.className = 'confetti-piece';
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.left = (50 + (Math.random() - 0.5) * 30) + '%';
+    p.style.top = '40%';
+    p.style.transform = `rotate(${Math.random() * 360}deg)`;
+    document.body.appendChild(p);
+    const dx = (Math.random() - 0.5) * 600;
+    const dy = -(Math.random() * 200 + 100);
+    const rot = (Math.random() - 0.5) * 720;
+    const dur = 1400 + Math.random() * 800;
+    p.animate([
+      { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
+      { transform: `translate(${dx}px, ${-dy + 800}px) rotate(${rot}deg)`, opacity: 0 }
+    ], { duration: dur, easing: 'cubic-bezier(0.2, 0.6, 0.4, 1)' });
+    setTimeout(() => p.remove(), dur);
+  }
+}
+
+// ============================================================
+// TOAST
+// ============================================================
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ============================================================
+// SETTINGS / NAME
+// ============================================================
+function openSettings() {
+  document.getElementById('nameInput').value = state.childName || '';
+  document.getElementById('settingsModal').classList.add('active');
+  setTimeout(() => document.getElementById('nameInput').focus(), 50);
+}
+function closeSettings() {
+  document.getElementById('settingsModal').classList.remove('active');
+}
+function saveSettings() {
+  const name = document.getElementById('nameInput').value.trim();
+  state.childName = name;
+  saveState();
+  renderDashboard();
+  closeSettings();
+  toast('Impostazioni salvate');
+}
+function confirmReset() {
+  document.getElementById('confirmModal').classList.add('active');
+}
+function doReset() {
+  const name = state.childName;
+  state = clone(DEFAULT_STATE);
+  state.childName = name; // preserva il nome
+  saveState();
+  // Reset anche del robot
+  robotState = clone(DEFAULT_ROBOT);
+  saveRobot();
+  document.getElementById('confirmModal').classList.remove('active');
+  closeSettings();
+  if (currentExerciseId) closeExercise();
+  if (document.getElementById('officinaView').classList.contains('active')) closeOfficina();
+  renderDashboard();
+  toast('Progresso azzerato');
+}
+
+// ============================================================
+// OFFICINA DI STELLE — robot builder & shop
+// ============================================================
+const ROBOT_KEY = 'menteLieve.robot.v1';
+const SIZES = [
+  { id:'size_0', meters:1.8,  name:'Persona',     desc:'Un robot piccolo come te.',          cost:0 },
+  { id:'size_1', meters:3,    name:'Cucciolo',    desc:'Più alto di una porta.',             cost:8 },
+  { id:'size_2', meters:6,    name:'Adolescente', desc:'Sopra le auto, sotto i tetti.',     cost:20 },
+  { id:'size_3', meters:12,   name:'Adulto',      desc:'Mezzo palazzo di altezza.',          cost:45 },
+  { id:'size_4', meters:25,   name:'Eroe',        desc:'Supera i palazzi più alti.',         cost:90 },
+  { id:'size_5', meters:50,   name:'Gigante',     desc:'Più alto del campanile.',            cost:160 },
+  { id:'size_6', meters:100,  name:'Titano',      desc:'Tocca le nuvole.',                   cost:280 }
+];
+const EQUIPMENT = [
+  { id:'helm_knight',  slot:'head', name:'Elmo Cavaliere',   desc:'Acciaio lucente con visiera.',   cost:6  },
+  { id:'crown',        slot:'head', name:'Corona Reale',     desc:'Oro e gemme preziose.',          cost:14 },
+  { id:'wizard_hat',   slot:'head', name:'Cappello da Mago', desc:'Pieno di stelle e magia.',       cost:10 },
+  { id:'visor_cyber',  slot:'head', name:'Visore Cyber',     desc:'Vede oltre l\'orizzonte.',       cost:8  },
+  { id:'antennas_hi',  slot:'antennas', name:'Antenne Hi-tech', desc:'Capta segnali lontani.',      cost:5  },
+  { id:'pauldrons',    slot:'shoulders', name:'Spalline d\'Oro', desc:'Da vero comandante.',        cost:7  },
+  { id:'cape_red',     slot:'back', name:'Mantello Rosso',   desc:'Sventola al vento.',             cost:9  },
+  { id:'cape_starry',  slot:'back', name:'Mantello Stellato',desc:'Tessuto con la notte.',          cost:24 },
+  { id:'wings_angel',  slot:'back', name:'Ali Angeliche',    desc:'Bianche e morbide.',             cost:18 },
+  { id:'wings_metal',  slot:'back', name:'Ali Meccaniche',   desc:'Volo a piena potenza.',          cost:22 },
+  { id:'jetpack',      slot:'back', name:'Jetpack',          desc:'A reazione, con fiamme blu.',    cost:16 },
+  { id:'chest_heart',  slot:'chest', name:'Cuore Luminoso',  desc:'Brilla quando sei felice.',      cost:12 },
+  { id:'chest_gem',    slot:'chest', name:'Gemma Cosmica',   desc:'Energia infinita.',              cost:20 },
+  { id:'chest_armor',  slot:'chest', name:'Corazza',         desc:'Piastre di acciaio.',            cost:15 },
+  { id:'shield',       slot:'leftHand', name:'Scudo',        desc:'Protegge da tutto.',             cost:8  },
+  { id:'sword_light',  slot:'rightHand', name:'Spada di Luce', desc:'Lama di pura energia.',        cost:11 },
+  { id:'hammer',       slot:'rightHand', name:'Martello',    desc:'Grosso e potente.',              cost:14 },
+];
+const ENVIRONMENTS = [
+  { id:'env_meadow',  name:'Pianura Tranquilla', desc:'Erba verde e cielo azzurro.', cost:0   },
+  { id:'env_garden',  name:'Giardino Fiorito',   desc:'Fiori e farfalle ovunque.',  cost:12  },
+  { id:'env_forest',  name:'Foresta Incantata',  desc:'Alberi alti e lucciole.',    cost:28  },
+  { id:'env_night',   name:'Città di Notte',     desc:'Lampioni e luna piena.',     cost:45  },
+  { id:'env_space',   name:'Spazio Profondo',    desc:'Stelle e pianeti lontani.',  cost:80  },
+  { id:'env_rainbow', name:'Mondo Arcobaleno',   desc:'Colori e nuvole rosa.',      cost:130 },
+];
+const DEFAULT_ROBOT = {
+  size: 'size_0', environment: 'env_meadow',
+  owned: ['size_0','env_meadow'],
+  equipped: { head:null, antennas:null, shoulders:null, back:null, chest:null, leftHand:null, rightHand:null },
+  spentStars: 0
+};
+let robotState = loadRobot();
+
+function loadRobot(){
+  try{
+    const raw = localStorage.getItem(ROBOT_KEY);
+    if(!raw) return clone(DEFAULT_ROBOT);
+    const parsed = JSON.parse(raw);
+    const merged = clone(DEFAULT_ROBOT);
+    Object.assign(merged, parsed);
+    merged.equipped = Object.assign({}, DEFAULT_ROBOT.equipped, parsed.equipped||{});
+    if(!merged.owned.includes('size_0')) merged.owned.push('size_0');
+    if(!merged.owned.includes('env_meadow')) merged.owned.push('env_meadow');
+    return merged;
+  }catch(e){return clone(DEFAULT_ROBOT)}
+}
+function saveRobot(){ try{ localStorage.setItem(ROBOT_KEY, JSON.stringify(robotState)); }catch(e){} }
+function totalEarnedStars(){
+  return Object.values(state.exercises).reduce((s,e)=>s+(e.totalStars||0),0);
+}
+function availableStars(){ return Math.max(0, totalEarnedStars() - robotState.spentStars); }
+function getCurrentSizeMeters(){ return (SIZES.find(s=>s.id===robotState.size)||SIZES[0]).meters; }
+
+function defsBlock(){
+  // Defs are injected globally once via injectGlobalDefs() to avoid ID conflicts
+  // across multiple SVGs (preview, scene, thumbnails) which would all share the same IDs.
+  return '';
+}
+
+function injectGlobalDefs(){
+  if(document.getElementById('officinaGlobalDefs')) return;
+  const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.id = 'officinaGlobalDefs';
+  svg.setAttribute('style','position:absolute;width:0;height:0;overflow:hidden;pointer-events:none');
+  svg.setAttribute('aria-hidden','true');
+  svg.innerHTML = `<defs>
+    <linearGradient id="skyMeadow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#BFD6E8"/><stop offset="60%" stop-color="#E5EEF6"/><stop offset="100%" stop-color="#FAF5ED"/></linearGradient>
+    <linearGradient id="skyGarden" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F4C2C2"/><stop offset="55%" stop-color="#FBEBDB"/><stop offset="100%" stop-color="#FAF5ED"/></linearGradient>
+    <linearGradient id="skyForest" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7FA37F"/><stop offset="50%" stop-color="#C5E1C5"/><stop offset="100%" stop-color="#F2EBDD"/></linearGradient>
+    <linearGradient id="skyNight" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2A2444"/><stop offset="55%" stop-color="#5A4878"/><stop offset="100%" stop-color="#B498D0"/></linearGradient>
+    <linearGradient id="skySpace" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1A1535"/><stop offset="60%" stop-color="#3A2D5C"/><stop offset="100%" stop-color="#6B5494"/></linearGradient>
+    <linearGradient id="skyRainbow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F4C2C2"/><stop offset="22%" stop-color="#F5CFA8"/><stop offset="42%" stop-color="#F5E4A8"/><stop offset="62%" stop-color="#C5E1C5"/><stop offset="82%" stop-color="#BFD6E8"/><stop offset="100%" stop-color="#D9C9E8"/></linearGradient>
+    <linearGradient id="groundGrass" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A8C99A"/><stop offset="100%" stop-color="#7FA37F"/></linearGradient>
+    <linearGradient id="groundDark" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5C7A5C"/><stop offset="100%" stop-color="#3D5240"/></linearGradient>
+    <linearGradient id="groundMoon" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9088A8"/><stop offset="100%" stop-color="#5C5470"/></linearGradient>
+    <linearGradient id="groundCity" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3A3050"/><stop offset="100%" stop-color="#241D38"/></linearGradient>
+    <linearGradient id="bodyMain" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FAF3E5"/><stop offset="50%" stop-color="#EFE4D2"/><stop offset="100%" stop-color="#C9B996"/></linearGradient>
+    <linearGradient id="bodyAccent" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E89B9B"/><stop offset="100%" stop-color="#C97862"/></linearGradient>
+    <radialGradient id="ledEye" cx="0.4" cy="0.4" r="0.7"><stop offset="0%" stop-color="#E8FAFF"/><stop offset="40%" stop-color="#7DD3E8"/><stop offset="100%" stop-color="#3A8FA8"/></radialGradient>
+    <radialGradient id="goldGrad"><stop offset="0%" stop-color="#F5E0A8"/><stop offset="60%" stop-color="#D4A574"/><stop offset="100%" stop-color="#A57848"/></radialGradient>
+    <radialGradient id="gemBlue"><stop offset="0%" stop-color="#E0F0FF"/><stop offset="40%" stop-color="#8FB4D0"/><stop offset="100%" stop-color="#3D5470"/></radialGradient>
+    <radialGradient id="heartGlow"><stop offset="0%" stop-color="#FFE8E8"/><stop offset="50%" stop-color="#E89B9B"/><stop offset="100%" stop-color="#A04848"/></radialGradient>
+    <radialGradient id="moonGrad" cx="0.35" cy="0.35"><stop offset="0%" stop-color="#FFFAEC"/><stop offset="80%" stop-color="#F0E5C8"/><stop offset="100%" stop-color="#C0B498"/></radialGradient>
+    <radialGradient id="sunGrad" cx="0.5" cy="0.5"><stop offset="0%" stop-color="#FFF6D8"/><stop offset="60%" stop-color="#F5D88A"/><stop offset="100%" stop-color="#E8AC7A"/></radialGradient>
+    <radialGradient id="shadowGrad"><stop offset="0%" stop-color="rgba(61,51,40,0.4)"/><stop offset="100%" stop-color="rgba(61,51,40,0)"/></radialGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>`;
+  document.body.appendChild(svg);
+}
+
+function buildScene(){
+  const robotH = getCurrentSizeMeters();
+  const minWorld = 50;
+  const worldH = Math.max(minWorld, robotH * 1.45 + 8);
+  const worldW = worldH * 2.2;
+  const groundBand = Math.min(6, worldH * 0.08);
+  const minX = -worldW/2;
+  const minY = -worldH;
+  const w = worldW;
+  const h = worldH + groundBand;
+  const env = robotState.environment;
+  const robotX = -worldW * 0.05;
+  const svg = `<svg class="scene-svg" viewBox="${minX} ${minY} ${w} ${h}" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <defs>${defsBlock()}</defs>
+    ${renderSky(env, worldW, worldH)}
+    ${renderSkyDecor(env, worldW, worldH)}
+    ${renderFarMountains(env, worldW, worldH)}
+    ${renderBuildings(env, worldW)}
+    ${renderGround(env, worldW, groundBand)}
+    ${renderForeground(env, worldW)}
+    ${renderHumanReference(-worldW*0.32)}
+    ${renderRobot(robotX, robotH)}
+  </svg>`;
+  document.getElementById('sceneContainer').innerHTML = svg;
+}
+
+function renderSky(env,w,h){
+  const fills = {env_meadow:'skyMeadow',env_garden:'skyGarden',env_forest:'skyForest',env_night:'skyNight',env_space:'skySpace',env_rainbow:'skyRainbow'};
+  return `<rect x="${-w/2}" y="${-h}" width="${w}" height="${h+8}" fill="url(#${fills[env]})"/>`;
+}
+function cloudShape(x,y,s){
+  return `<g transform="translate(${x},${y})" opacity="0.85">
+    <ellipse cx="0" cy="0" rx="${s*1.6}" ry="${s*0.7}" fill="#FFFFFF"/>
+    <ellipse cx="${-s}" cy="${-s*0.3}" rx="${s*0.9}" ry="${s*0.6}" fill="#FFFFFF"/>
+    <ellipse cx="${s}" cy="${-s*0.2}" rx="${s*0.8}" ry="${s*0.55}" fill="#FFFFFF"/>
+  </g>`;
+}
+function renderSkyDecor(env,w,h){
+  if(env==='env_meadow'||env==='env_garden'||env==='env_rainbow'){
+    const sunR = h*0.06;
+    const clouds = [{x:-w*0.35,y:-h*0.7,s:1},{x:w*0.05,y:-h*0.85,s:.7},{x:-w*0.05,y:-h*0.55,s:.5}].map(c=>cloudShape(c.x,c.y,c.s*h*0.04)).join('');
+    let main = `<circle cx="${w*0.32}" cy="${-h*0.78}" r="${sunR}" fill="url(#sunGrad)" opacity="0.85"/>${clouds}`;
+    if(env==='env_rainbow'){
+      const cx=w*0.1,cy=-h*0.05,r=h*0.85;
+      const colors=['#E89B9B','#E8AC7A','#F5D88A','#95C295','#8FB4D0','#B498D0'];
+      const arcs=colors.map((c,i)=>{const rr=r-i*(h*0.022);return `<path d="M ${cx-rr},${cy} A ${rr},${rr} 0 0 1 ${cx+rr},${cy}" fill="none" stroke="${c}" stroke-width="${h*0.022}" opacity="0.7"/>`;}).join('');
+      main = arcs+cloudShape(-w*0.3,-h*0.5,h*0.045)+cloudShape(w*0.4,-h*0.55,h*0.04);
+    }
+    return main;
+  }
+  if(env==='env_forest'){
+    return `<circle cx="${w*0.3}" cy="${-h*0.78}" r="${h*0.05}" fill="#FFF6D8" opacity="0.7"/>${cloudShape(-w*0.3,-h*0.7,h*0.04)}`;
+  }
+  if(env==='env_night'){
+    const moonR = h*0.07;
+    const stars = Array.from({length:18},()=>{
+      const x=(Math.random()-0.5)*w*0.95,y=-h*(0.45+Math.random()*0.5),r=0.18+Math.random()*0.35;
+      return `<circle class="twinkle" style="animation-delay:${(Math.random()*2.4).toFixed(2)}s" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${r.toFixed(2)}" fill="#FFFAEC"/>`;
+    }).join('');
+    return `${stars}<g transform="translate(${w*0.32},${-h*0.78})">
+      <circle r="${moonR}" fill="url(#moonGrad)"/>
+      <circle cx="${moonR*0.3}" cy="${-moonR*0.2}" r="${moonR*0.18}" fill="#D4C8A0" opacity="0.5"/>
+      <circle cx="${-moonR*0.2}" cy="${moonR*0.25}" r="${moonR*0.12}" fill="#D4C8A0" opacity="0.5"/>
+      <circle r="${moonR*1.5}" fill="#FFFAEC" opacity="0.06"/>
+    </g>`;
+  }
+  if(env==='env_space'){
+    const stars=Array.from({length:36},()=>{
+      const x=(Math.random()-0.5)*w*0.98,y=-h*(0.3+Math.random()*0.65),r=0.18+Math.random()*0.45;
+      return `<circle class="twinkle" style="animation-delay:${(Math.random()*2.4).toFixed(2)}s" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${r.toFixed(2)}" fill="#FFFAEC"/>`;
+    }).join('');
+    return `<ellipse cx="${-w*0.2}" cy="${-h*0.7}" rx="${w*0.45}" ry="${h*0.08}" fill="#B498D0" opacity="0.18"/>${stars}
+      <g transform="translate(${w*0.32},${-h*0.78})">
+        <circle r="${h*0.06}" fill="#E8AC7A"/>
+        <ellipse rx="${h*0.11}" ry="${h*0.018}" fill="none" stroke="#F5CFA8" stroke-width="${h*0.008}" opacity="0.7" transform="rotate(-18)"/>
+      </g>
+      <circle cx="${-w*0.32}" cy="${-h*0.62}" r="${h*0.035}" fill="#8FB4D0"/>`;
+  }
+  return '';
+}
+function renderFarMountains(env,w,h){
+  if(env==='env_space') return '';
+  const op = env==='env_night'?0.5:0.7;
+  const fill = env==='env_night'?'#3D2D55':env==='env_forest'?'#5C7A5C':'#A89A8A';
+  return `<path d="M ${-w/2} 0 L ${-w*0.4} ${-h*0.18} L ${-w*0.28} ${-h*0.08} L ${-w*0.15} ${-h*0.22} L ${-w*0.02} ${-h*0.1} L ${w*0.12} ${-h*0.2} L ${w*0.25} ${-h*0.07} L ${w*0.4} ${-h*0.16} L ${w/2} 0 Z" fill="${fill}" opacity="${op}"/>`;
+}
+function renderBuildings(env,w){
+  const buildings=[{type:'house',x:-22,h:7,width:6},{type:'apartment',x:28,h:22,width:14},{type:'tower',x:-44,h:35,width:5},{type:'skyscraper',x:50,h:45,width:9},{type:'house',x:18,h:5,width:5}];
+  const isNight = env==='env_night';
+  return buildings.map(b=>renderBuilding(b,isNight,env)).join('');
+}
+function renderBuilding(b,isNight,env){
+  const {type,x,h,width}=b;
+  const palette = env==='env_space'?{wall:'#5A4878',wallDark:'#3A2D5C',roof:'#3D2D55',window:'#B498D0'}:isNight?{wall:'#5C5078',wallDark:'#3D3552',roof:'#2A2440',window:'#F5E4A8'}:env==='env_forest'?{wall:'#C9B996',wallDark:'#A89478',roof:'#7A4F3A',window:'#FAF3E5'}:env==='env_rainbow'?{wall:'#FBEBDB',wallDark:'#F5CFA8',roof:'#E89B9B',window:'#FFFAEC'}:{wall:'#EFE4D2',wallDark:'#C9B996',roof:'#C97862',window:'#FAF3E5'};
+  const baseY=0,x1=x-width/2;
+  if(type==='house'){
+    const roofH=h*0.35,wallH=h-roofH,winSize=Math.min(1.4,width*0.25);
+    return `<g>
+      <rect x="${x1}" y="${baseY-wallH}" width="${width}" height="${wallH}" fill="${palette.wall}"/>
+      <polygon points="${x1-0.6},${baseY-wallH} ${x1+width+0.6},${baseY-wallH} ${x},${baseY-h}" fill="${palette.roof}"/>
+      <rect x="${x-winSize/2}" y="${baseY-wallH+wallH*0.25}" width="${winSize}" height="${winSize*0.9}" fill="${palette.window}" opacity="${isNight?0.95:0.7}"/>
+      <line x1="${x}" y1="${baseY-wallH+wallH*0.25}" x2="${x}" y2="${baseY-wallH+wallH*0.25+winSize*0.9}" stroke="${palette.wallDark}" stroke-width="0.08"/>
+      <line x1="${x-winSize/2}" y1="${baseY-wallH+wallH*0.25+winSize*0.45}" x2="${x+winSize/2}" y2="${baseY-wallH+wallH*0.25+winSize*0.45}" stroke="${palette.wallDark}" stroke-width="0.08"/>
+      <rect x="${x-winSize*0.3}" y="${baseY-wallH*0.55}" width="${winSize*0.6}" height="${wallH*0.55}" fill="${palette.roof}" opacity="0.7"/>
+    </g>`;
+  }
+  if(type==='apartment'){
+    const cols=3,rows=Math.max(3,Math.floor(h/3)),wins=[];
+    for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+      const wx=x1+(width*(c+0.5)/cols)-0.6,wy=baseY-h+(h*(r+0.4)/rows);
+      const lit=isNight?(Math.random()<0.5):true;
+      wins.push(`<rect x="${wx.toFixed(2)}" y="${wy.toFixed(2)}" width="1.2" height="1.6" fill="${lit?palette.window:palette.wallDark}" opacity="${lit?0.95:0.4}"/>`);
+    }
+    return `<g><rect x="${x1}" y="${baseY-h}" width="${width}" height="${h}" fill="${palette.wall}"/>
+      <rect x="${x1}" y="${baseY-h}" width="${width}" height="${h*0.05}" fill="${palette.roof}"/>
+      ${wins.join('')}
+      <rect x="${x-1.2}" y="${baseY-2.2}" width="2.4" height="2.2" fill="${palette.wallDark}"/></g>`;
+  }
+  if(type==='tower'){
+    return `<g>
+      <rect x="${x1}" y="${baseY-h}" width="${width}" height="${h}" fill="${palette.wall}"/>
+      <rect x="${x-width*0.18}" y="${baseY-h*0.7}" width="${width*0.36}" height="${h*0.16}" rx="${width*0.18}" fill="${palette.wallDark}" opacity="0.7"/>
+      <rect x="${x-width*0.18}" y="${baseY-h*0.45}" width="${width*0.36}" height="${h*0.16}" rx="${width*0.18}" fill="${palette.wallDark}" opacity="0.7"/>
+      <polygon points="${x1-0.3},${baseY-h} ${x1+width+0.3},${baseY-h} ${x},${baseY-h*1.18}" fill="${palette.roof}"/>
+      <line x1="${x}" y1="${baseY-h*1.18}" x2="${x}" y2="${baseY-h*1.32}" stroke="${palette.roof}" stroke-width="0.1"/>
+      <path d="M ${x-0.4} ${baseY-h*1.28} L ${x+0.6} ${baseY-h*1.3} L ${x-0.4} ${baseY-h*1.32} Z" fill="${palette.roof}"/>
+    </g>`;
+  }
+  if(type==='skyscraper'){
+    const rows=Math.floor(h/2.2),wins=[];
+    for(let r=0;r<rows;r++){
+      const wy=baseY-h+(h*(r+0.4)/rows);
+      const lit=isNight?(Math.random()<0.6):true;
+      wins.push(`<rect x="${x1+0.6}" y="${wy.toFixed(2)}" width="${width-1.2}" height="0.8" fill="${lit?palette.window:palette.wallDark}" opacity="${lit?0.85:0.3}"/>`);
+    }
+    return `<g><rect x="${x1}" y="${baseY-h}" width="${width}" height="${h}" fill="${palette.wall}"/>
+      <rect x="${x1+0.4}" y="${baseY-h-0.6}" width="${width-0.8}" height="0.6" fill="${palette.roof}"/>
+      <line x1="${x}" y1="${baseY-h-0.6}" x2="${x}" y2="${baseY-h-2.5}" stroke="${palette.roof}" stroke-width="0.18"/>
+      ${wins.join('')}</g>`;
+  }
+  return '';
+}
+function renderGround(env,w,gband){
+  const grad = env==='env_night'?'groundCity':env==='env_space'?'groundMoon':env==='env_forest'?'groundDark':'groundGrass';
+  let extra='';
+  if(env==='env_meadow'||env==='env_garden'){
+    extra = Array.from({length:24}).map(()=>{
+      const x=(Math.random()-0.5)*w*0.96;
+      return `<path d="M ${x.toFixed(1)} 0 q 0.2 -0.6 0.5 0 q 0.3 -0.8 0.6 0 q 0.3 -0.5 0.6 0" stroke="#5C7A5C" stroke-width="0.12" fill="none" opacity="0.7"/>`;
+    }).join('');
+  }
+  if(env==='env_space'){
+    extra = Array.from({length:6}).map(()=>{
+      const x=(Math.random()-0.5)*w*0.9,r=0.4+Math.random()*0.8;
+      return `<ellipse cx="${x.toFixed(1)}" cy="${(0.4+Math.random()*0.6).toFixed(2)}" rx="${r.toFixed(2)}" ry="${(r*0.4).toFixed(2)}" fill="#5C5470" opacity="0.7"/>`;
+    }).join('');
+  }
+  return `<rect x="${-w/2}" y="0" width="${w}" height="${gband+2}" fill="url(#${grad})"/>
+    <rect x="${-w/2}" y="0" width="${w}" height="0.18" fill="rgba(0,0,0,0.18)"/>${extra}`;
+}
+function renderForeground(env,w){
+  if(env==='env_garden'){
+    const flowers=[];
+    for(let i=0;i<12;i++){
+      const x=(Math.random()-0.5)*w*0.95;
+      const c=['#E89B9B','#F5CFA8','#F5E4A8','#B498D0'][Math.floor(Math.random()*4)];
+      flowers.push(`<g transform="translate(${x.toFixed(1)},0)">
+        <line x1="0" y1="0" x2="0" y2="-0.9" stroke="#5C7A5C" stroke-width="0.1"/>
+        <circle cx="0" cy="-1" r="0.35" fill="${c}"/>
+        <circle cx="0" cy="-1" r="0.12" fill="#F5E4A8"/></g>`);
+    }
+    const flutter=Array.from({length:3}).map((_,i)=>{
+      const x=(Math.random()-0.5)*w*0.5,y=-3-Math.random()*4;
+      return `<g class="firefly" style="animation-delay:${i*0.4}s" transform="translate(${x.toFixed(1)},${y.toFixed(1)})">
+        <ellipse cx="-0.3" cy="0" rx="0.4" ry="0.25" fill="#E89B9B" opacity="0.8"/>
+        <ellipse cx="0.3" cy="0" rx="0.4" ry="0.25" fill="#F4C2C2" opacity="0.8"/></g>`;
+    }).join('');
+    return flowers.join('')+flutter;
+  }
+  if(env==='env_forest'){
+    const trees=[];
+    [{x:-32,h:9},{x:35,h:11},{x:-15,h:6},{x:14,h:7},{x:-50,h:8},{x:46,h:10}].forEach(t=>{
+      trees.push(`<g transform="translate(${t.x},0)">
+        <rect x="-0.5" y="${-t.h*0.35}" width="1" height="${t.h*0.35}" fill="#5C3D2A"/>
+        <ellipse cx="0" cy="${-t.h*0.55}" rx="${t.h*0.32}" ry="${t.h*0.42}" fill="#7FA37F"/>
+        <ellipse cx="${-t.h*0.18}" cy="${-t.h*0.48}" rx="${t.h*0.22}" ry="${t.h*0.3}" fill="#8FB48F"/>
+        <ellipse cx="${t.h*0.18}" cy="${-t.h*0.5}" rx="${t.h*0.22}" ry="${t.h*0.32}" fill="#95C295"/></g>`);
+    });
+    const flies=Array.from({length:8}).map((_,i)=>{
+      const x=(Math.random()-0.5)*w*0.85,y=-2-Math.random()*7;
+      return `<g class="firefly" style="animation-delay:${(i*0.3).toFixed(2)}s">
+        <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="0.45" fill="#F5E4A8" opacity="0.4"/>
+        <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="0.18" fill="#F5E4A8"/></g>`;
+    }).join('');
+    const mush=`<g transform="translate(${(w*0.25).toFixed(1)},0)">
+      <ellipse cx="0" cy="-0.5" rx="0.6" ry="0.35" fill="#E89B9B"/>
+      <circle cx="-0.2" cy="-0.55" r="0.08" fill="white"/>
+      <circle cx="0.15" cy="-0.5" r="0.06" fill="white"/>
+      <rect x="-0.15" y="-0.5" width="0.3" height="0.5" fill="#FAF3E5"/></g>`;
+    return trees.join('')+flies+mush;
+  }
+  if(env==='env_night'){
+    const lp=(x)=>`<g transform="translate(${x},0)">
+      <rect x="-0.15" y="-5" width="0.3" height="5" fill="#3D3328"/>
+      <circle cx="0" cy="-5.3" r="1.4" fill="#F5E4A8" opacity="0.35"/>
+      <circle cx="0" cy="-5.3" r="0.55" fill="#F5E4A8"/>
+      <ellipse cx="0" cy="-5.3" rx="2" ry="0.4" fill="#F5E4A8" opacity="0.18"/></g>`;
+    return lp(-w*0.36)+lp(-w*0.05)+lp(w*0.22);
+  }
+  if(env==='env_space'){
+    return Array.from({length:5}).map((_,i)=>{
+      const x=(Math.random()-0.5)*w*0.85,y=-(2+Math.random()*8),r=0.4+Math.random()*0.7;
+      return `<g class="float-anim" style="animation-delay:${(i*0.4).toFixed(2)}s" transform="translate(${x.toFixed(1)},${y.toFixed(1)})">
+        <circle r="${r.toFixed(2)}" fill="#9088A8"/>
+        <circle cx="${(r*0.3).toFixed(2)}" cy="${(-r*0.2).toFixed(2)}" r="${(r*0.18).toFixed(2)}" fill="#5C5470"/></g>`;
+    }).join('');
+  }
+  if(env==='env_rainbow'){
+    return Array.from({length:7}).map((_,i)=>{
+      const x=(Math.random()-0.5)*w*0.9;
+      const c=['#E89B9B','#F5CFA8','#F5E4A8','#C5E1C5','#BFD6E8','#D9C9E8'][i%6];
+      return `<g transform="translate(${x.toFixed(1)},0)">
+        <circle cx="0" cy="-0.5" r="0.5" fill="${c}"/>
+        <circle cx="0" cy="-0.5" r="0.18" fill="white" opacity="0.6"/></g>`;
+    }).join('');
+  }
+  return '';
+}
+function renderHumanReference(x){
+  const h=1.8;
+  return `<g transform="translate(${x},0)">
+    <ellipse cx="0" cy="0" rx="0.5" ry="0.1" fill="url(#shadowGrad)"/>
+    <circle cx="0" cy="${-h*0.92}" r="${h*0.09}" fill="#F5CFA8"/>
+    <path d="M ${-h*0.1} ${-h*0.96} Q 0 ${-h*1.05} ${h*0.1} ${-h*0.96} L ${h*0.1} ${-h*0.88} L ${-h*0.1} ${-h*0.88} Z" fill="#5C3D2A"/>
+    <rect x="${-h*0.13}" y="${-h*0.83}" width="${h*0.26}" height="${h*0.4}" rx="${h*0.04}" fill="#8FB4D0"/>
+    <rect x="${-h*0.13}" y="${-h*0.43}" width="${h*0.26}" height="${h*0.43}" rx="${h*0.03}" fill="#3D5470"/>
+    <rect x="${-h*0.18}" y="${-h*0.78}" width="${h*0.05}" height="${h*0.32}" rx="${h*0.02}" fill="#8FB4D0"/>
+    <rect x="${h*0.13}" y="${-h*0.78}" width="${h*0.05}" height="${h*0.32}" rx="${h*0.02}" fill="#8FB4D0"/>
+    <rect x="${-h*0.07}" y="${-h*0.05}" width="${h*0.06}" height="${h*0.05}" fill="#3D3328"/>
+    <rect x="${h*0.01}" y="${-h*0.05}" width="${h*0.06}" height="${h*0.05}" fill="#3D3328"/>
+  </g>`;
+}
+
+const ROBOT_LOCAL_H = 130;
+function renderRobot(x,meters){
+  const scale = meters/ROBOT_LOCAL_H;
+  const eq = robotState.equipped;
+  return `<g transform="translate(${x},0) scale(${scale.toFixed(4)})">
+    <ellipse cx="0" cy="0" rx="28" ry="4.5" class="robot-shadow" fill="url(#shadowGrad)"/>
+    <g class="float-anim">
+      ${renderBackEquipment(eq.back)}
+      ${renderRobotBase()}
+      ${renderChestArmor(eq.chest)}
+      ${renderChestEquipment(eq.chest)}
+      ${renderShouldersEq(eq.shoulders)}
+      ${renderHeadEquipment(eq.head)}
+      ${renderAntennasEq(eq.antennas)}
+      ${renderLeftHand(eq.leftHand)}
+      ${renderRightHand(eq.rightHand)}
+    </g>
+  </g>`;
+}
+
+function renderRobotBase(){
+  return `
+    <rect x="-20" y="-50" width="13" height="32" rx="6" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+    <rect x="-19" y="-50" width="11" height="3" rx="1.5" fill="#6B5D4F" opacity="0.4"/>
+    <circle cx="-13.5" cy="-50" r="3.2" fill="#6B5D4F"/>
+    <rect x="-19" y="-22" width="13" height="22" rx="5" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+    <ellipse cx="-12.5" cy="-3" rx="11" ry="3" fill="#3D3328"/>
+    <rect x="7" y="-50" width="13" height="32" rx="6" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+    <rect x="8" y="-50" width="11" height="3" rx="1.5" fill="#6B5D4F" opacity="0.4"/>
+    <circle cx="13.5" cy="-50" r="3.2" fill="#6B5D4F"/>
+    <rect x="6" y="-22" width="13" height="22" rx="5" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+    <ellipse cx="12.5" cy="-3" rx="11" ry="3" fill="#3D3328"/>
+    <rect x="-22" y="-58" width="44" height="10" rx="3" fill="#6B5D4F"/>
+    <rect x="-22" y="-58" width="44" height="3" fill="#4A3F33"/>
+    <circle cx="0" cy="-53" r="1.8" fill="#D4A574"/>
+    <path d="M -28 -58 L -28 -100 Q -28 -106 -22 -106 L 22 -106 Q 28 -106 28 -100 L 28 -58 Z" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.7"/>
+    <rect x="-15" y="-95" width="30" height="32" rx="4" fill="#C9B996" opacity="0.55"/>
+    <rect x="-15" y="-95" width="30" height="2.5" fill="#6B5D4F" opacity="0.35"/>
+    <circle cx="-25" cy="-62" r="1.1" fill="#6B5D4F"/>
+    <circle cx="25" cy="-62" r="1.1" fill="#6B5D4F"/>
+    <circle cx="-25" cy="-100" r="1.1" fill="#6B5D4F"/>
+    <circle cx="25" cy="-100" r="1.1" fill="#6B5D4F"/>
+    <circle cx="0" cy="-79" r="4" fill="#7DD3E8" opacity="0.35"/>
+    <circle cx="0" cy="-79" r="2.4" fill="#7DD3E8"/>
+    <circle cx="0" cy="-79" r="1" fill="#E8FAFF"/>
+    <circle cx="-32" cy="-100" r="5.5" fill="#6B5D4F"/>
+    <rect x="-37" y="-100" width="10" height="22" rx="4.5" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+    <circle cx="-32" cy="-78" r="3.8" fill="#6B5D4F"/>
+    <rect x="-36" y="-78" width="9" height="22" rx="4" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+    <circle cx="32" cy="-100" r="5.5" fill="#6B5D4F"/>
+    <rect x="27" y="-100" width="10" height="22" rx="4.5" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+    <circle cx="32" cy="-78" r="3.8" fill="#6B5D4F"/>
+    <rect x="27" y="-78" width="9" height="22" rx="4" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+    <circle cx="-31" cy="-54" r="4.2" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+    <circle cx="31" cy="-54" r="4.2" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+    <rect x="-7" y="-114" width="14" height="9" rx="2.5" fill="#6B5D4F"/>
+    <rect x="-7" y="-114" width="14" height="2" fill="#4A3F33"/>
+    <rect x="-18" y="-130" width="36" height="22" rx="5" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.7"/>
+    <rect x="-18" y="-130" width="36" height="3" fill="#C9B996"/>
+    <circle cx="-7" cy="-122" r="3.2" fill="#3D3328"/>
+    <circle cx="7" cy="-122" r="3.2" fill="#3D3328"/>
+    <circle cx="-7" cy="-122" r="4.5" fill="#7DD3E8" opacity="0.3"/>
+    <circle cx="7" cy="-122" r="4.5" fill="#7DD3E8" opacity="0.3"/>
+    <circle cx="-7" cy="-122" r="2.4" fill="url(#ledEye)"/>
+    <circle cx="7" cy="-122" r="2.4" fill="url(#ledEye)"/>
+    <circle cx="-6.3" cy="-122.7" r="0.9" fill="#FFFFFF"/>
+    <circle cx="7.7" cy="-122.7" r="0.9" fill="#FFFFFF"/>
+    <rect x="-6" y="-115" width="12" height="3" rx="1.2" fill="#3D3328"/>
+    <line x1="-4" y1="-115" x2="-4" y2="-112" stroke="#6B5D4F" stroke-width="0.4"/>
+    <line x1="-1" y1="-115" x2="-1" y2="-112" stroke="#6B5D4F" stroke-width="0.4"/>
+    <line x1="2" y1="-115" x2="2" y2="-112" stroke="#6B5D4F" stroke-width="0.4"/>
+    <line x1="5" y1="-115" x2="5" y2="-112" stroke="#6B5D4F" stroke-width="0.4"/>
+    <rect x="-20" y="-124" width="2.5" height="10" rx="1" fill="#6B5D4F"/>
+    <rect x="17.5" y="-124" width="2.5" height="10" rx="1" fill="#6B5D4F"/>
+    <line x1="-9" y1="-130" x2="-13" y2="-138" stroke="#6B5D4F" stroke-width="1.1" stroke-linecap="round"/>
+    <line x1="9" y1="-130" x2="13" y2="-138" stroke="#6B5D4F" stroke-width="1.1" stroke-linecap="round"/>
+    <circle cx="-13" cy="-138" r="1.7" fill="#E89B9B"/>
+    <circle cx="13" cy="-138" r="1.7" fill="#7DD3E8"/>
+  `;
+}
+
+function renderHeadEquipment(id){
+  if(id==='helm_knight') return `<g>
+    <path d="M -19 -130 L -19 -116 L -10 -116 L -10 -120 L 10 -120 L 10 -116 L 19 -116 L 19 -130 Q 19 -136 13 -138 L -13 -138 Q -19 -136 -19 -130 Z" fill="#A89A8A" stroke="#6B5D4F" stroke-width="0.8"/>
+    <rect x="-12" y="-127" width="24" height="3" fill="#3D3328"/>
+    <path d="M 0 -138 L -2 -145 L 2 -145 Z" fill="#E89B9B"/>
+    <path d="M -2 -145 Q 0 -150 2 -145" fill="#E89B9B"/>
+    <line x1="-19" y1="-122" x2="19" y2="-122" stroke="#6B5D4F" stroke-width="0.5"/></g>`;
+  if(id==='crown') return `<g>
+    <path d="M -16 -132 L -16 -138 L -10 -134 L -5 -142 L 0 -134 L 5 -142 L 10 -134 L 16 -138 L 16 -132 Z" fill="url(#goldGrad)" stroke="#A57848" stroke-width="0.6"/>
+    <circle cx="-10" cy="-134" r="1.4" fill="#E89B9B"/>
+    <circle cx="0" cy="-135" r="1.5" fill="#7DD3E8"/>
+    <circle cx="10" cy="-134" r="1.4" fill="#95C295"/>
+    <rect x="-16" y="-132" width="32" height="2" fill="#A57848"/></g>`;
+  if(id==='wizard_hat') return `<g>
+    <path d="M -14 -130 L 0 -156 L 14 -130 Q 8 -132 0 -132 Q -8 -132 -14 -130 Z" fill="#5A4878" stroke="#3D2D55" stroke-width="0.6"/>
+    <ellipse cx="0" cy="-130" rx="18" ry="2.8" fill="#5A4878" stroke="#3D2D55" stroke-width="0.5"/>
+    <path d="M -14 -130 L 14 -130 L 14 -128 L -14 -128 Z" fill="#D4A574"/>
+    <path d="M -3 -148 L -2 -146 L 0 -145 L -2 -144 L -3 -142 L -4 -144 L -6 -145 L -4 -146 Z" fill="#F5E4A8"/>
+    <path d="M 5 -140 L 5.7 -138.5 L 7 -138 L 5.7 -137.5 L 5 -136 L 4.3 -137.5 L 3 -138 L 4.3 -138.5 Z" fill="#F5E4A8"/></g>`;
+  if(id==='visor_cyber') return `<g>
+    <rect x="-19" y="-126" width="38" height="7" rx="3" fill="#3D3328"/>
+    <rect x="-21" y="-127" width="42" height="9" rx="4" fill="#7DD3E8" opacity="0.25"/>
+    <rect x="-17" y="-125" width="34" height="5" rx="2" fill="#7DD3E8" opacity="0.95"/>
+    <rect x="-15" y="-124" width="6" height="2" fill="#E8FAFF"/>
+    <rect x="9" y="-124" width="6" height="2" fill="#E8FAFF"/>
+    <line x1="-19" y1="-122.5" x2="19" y2="-122.5" stroke="#3D3328" stroke-width="0.4"/></g>`;
+  return '';
+}
+function renderAntennasEq(id){
+  if(id==='antennas_hi') return `<g>
+    <line x1="-9" y1="-130" x2="-15" y2="-148" stroke="#6B5D4F" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="9" y1="-130" x2="15" y2="-148" stroke="#6B5D4F" stroke-width="1.3" stroke-linecap="round"/>
+    <circle cx="-15" cy="-148" r="5" fill="#7DD3E8" opacity="0.3"/>
+    <circle cx="15" cy="-148" r="5" fill="#E89B9B" opacity="0.3"/>
+    <circle cx="-15" cy="-148" r="2.6" fill="#7DD3E8"/>
+    <circle cx="15" cy="-148" r="2.6" fill="#E89B9B"/>
+    <circle cx="-15" cy="-148" r="1" fill="#FFFFFF"/>
+    <circle cx="15" cy="-148" r="1" fill="#FFFFFF"/>
+    <path d="M -15 -150 q -3 -2 -3 -5" stroke="#7DD3E8" stroke-width="0.6" fill="none" opacity="0.6"/>
+    <path d="M 15 -150 q 3 -2 3 -5" stroke="#E89B9B" stroke-width="0.6" fill="none" opacity="0.6"/></g>`;
+  return '';
+}
+function renderShouldersEq(id){
+  if(id==='pauldrons') return `<g>
+    <path d="M -38 -103 Q -38 -110 -28 -110 L -22 -110 Q -22 -100 -32 -98 Q -38 -98 -38 -103 Z" fill="url(#goldGrad)" stroke="#A57848" stroke-width="0.6"/>
+    <path d="M 38 -103 Q 38 -110 28 -110 L 22 -110 Q 22 -100 32 -98 Q 38 -98 38 -103 Z" fill="url(#goldGrad)" stroke="#A57848" stroke-width="0.6"/>
+    <circle cx="-30" cy="-104" r="1.2" fill="#A57848"/>
+    <circle cx="30" cy="-104" r="1.2" fill="#A57848"/></g>`;
+  return '';
+}
+function renderBackEquipment(id){
+  if(id==='cape_red') return `<g class="cape-sway">
+    <path d="M -22 -106 Q -28 -90 -30 -50 Q -28 -32 -25 -8 L 25 -8 Q 28 -32 30 -50 Q 28 -90 22 -106 Z" fill="#C97862" stroke="#9C5A48" stroke-width="0.8"/>
+    <path d="M -22 -106 Q -22 -100 -18 -98 L 18 -98 Q 22 -100 22 -106" fill="#A04848"/>
+    <line x1="-15" y1="-90" x2="-18" y2="-12" stroke="#9C5A48" stroke-width="0.5" opacity="0.5"/>
+    <line x1="15" y1="-90" x2="18" y2="-12" stroke="#9C5A48" stroke-width="0.5" opacity="0.5"/></g>`;
+  if(id==='cape_starry'){
+    const stars=Array.from({length:14}).map(()=>{
+      const x=-22+Math.random()*44,y=-100+Math.random()*90;
+      return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="0.8" fill="#F5E4A8" class="twinkle"/>`;
+    }).join('');
+    return `<g class="cape-sway">
+      <path d="M -24 -106 Q -30 -90 -32 -50 Q -30 -32 -27 -8 L 27 -8 Q 30 -32 32 -50 Q 30 -90 24 -106 Z" fill="#3D2D55" stroke="#241A38" stroke-width="0.8"/>
+      ${stars}
+      <circle cx="0" cy="-50" r="5" fill="#F5E4A8" opacity="0.3"/>
+      <circle cx="0" cy="-50" r="2.5" fill="#F5E4A8"/></g>`;
+  }
+  if(id==='wings_angel'){
+    const wing=(m)=>{const sx=m?1:-1;return `<g transform="scale(${sx},1)">
+      <path d="M 26 -100 Q 60 -110 70 -90 Q 70 -75 55 -70 Q 60 -55 45 -55 Q 50 -45 35 -52 Q 30 -65 28 -80 Z" fill="#FFFAEC" stroke="#D4C8A0" stroke-width="0.6"/>
+      <path d="M 30 -90 Q 50 -90 60 -78" stroke="#E8DEC9" stroke-width="0.5" fill="none"/>
+      <path d="M 32 -80 Q 48 -78 55 -68" stroke="#E8DEC9" stroke-width="0.5" fill="none"/>
+      <path d="M 34 -70 Q 44 -68 47 -58" stroke="#E8DEC9" stroke-width="0.5" fill="none"/></g>`;};
+    return `<g>${wing(false)}${wing(true)}</g>`;
+  }
+  if(id==='wings_metal'){
+    const wing=(m)=>{const sx=m?1:-1;return `<g transform="scale(${sx},1)">
+      <path d="M 26 -100 L 56 -106 L 64 -94 L 50 -88 L 60 -80 L 44 -76 L 52 -66 L 36 -66 L 28 -80 Z" fill="#A89A8A" stroke="#6B5D4F" stroke-width="0.6"/>
+      <path d="M 30 -98 L 50 -100 M 32 -88 L 50 -88 M 34 -78 L 46 -76" stroke="#6B5D4F" stroke-width="0.4" fill="none"/>
+      <circle cx="40" cy="-90" r="3" fill="#7DD3E8" opacity="0.3"/>
+      <circle cx="40" cy="-90" r="1.5" fill="#7DD3E8"/></g>`;};
+    return `<g>${wing(false)}${wing(true)}</g>`;
+  }
+  if(id==='jetpack') return `<g>
+    <rect x="-16" y="-100" width="32" height="32" rx="3" fill="#A89A8A" stroke="#6B5D4F" stroke-width="0.6"/>
+    <rect x="-13" y="-98" width="11" height="22" rx="2" fill="#6B5D4F"/>
+    <rect x="2" y="-98" width="11" height="22" rx="2" fill="#6B5D4F"/>
+    <circle cx="-7.5" cy="-94" r="1.6" fill="#E89B9B"/>
+    <circle cx="7.5" cy="-94" r="1.6" fill="#7DD3E8"/>
+    <rect x="-13" y="-72" width="11" height="6" rx="1" fill="#3D3328"/>
+    <rect x="2" y="-72" width="11" height="6" rx="1" fill="#3D3328"/>
+    <g class="flame-flicker" style="transform-origin:-7.5px -66px">
+      <path d="M -12 -66 Q -10 -55 -7.5 -50 Q -5 -55 -3 -66 Z" fill="#7DD3E8"/>
+      <path d="M -10 -66 Q -9 -58 -7.5 -54 Q -6 -58 -5 -66 Z" fill="#E8FAFF"/></g>
+    <g class="flame-flicker" style="transform-origin:7.5px -66px;animation-delay:0.1s">
+      <path d="M 3 -66 Q 5 -55 7.5 -50 Q 10 -55 12 -66 Z" fill="#7DD3E8"/>
+      <path d="M 5 -66 Q 6 -58 7.5 -54 Q 9 -58 10 -66 Z" fill="#E8FAFF"/></g></g>`;
+  return '';
+}
+function renderChestArmor(id){
+  if(id==='chest_armor') return `<g>
+    <path d="M -22 -106 L -22 -60 L 22 -60 L 22 -106 Q 22 -110 18 -110 L -18 -110 Q -22 -110 -22 -106 Z" fill="#A89A8A" stroke="#6B5D4F" stroke-width="0.7"/>
+    <path d="M -18 -100 L -10 -100 L -8 -94 L -10 -88 L -18 -88 Z" fill="#6B5D4F"/>
+    <path d="M 18 -100 L 10 -100 L 8 -94 L 10 -88 L 18 -88 Z" fill="#6B5D4F"/>
+    <line x1="0" y1="-106" x2="0" y2="-60" stroke="#6B5D4F" stroke-width="0.6"/>
+    <circle cx="-18" cy="-66" r="1.2" fill="#D4A574"/>
+    <circle cx="18" cy="-66" r="1.2" fill="#D4A574"/>
+    <circle cx="-18" cy="-103" r="1.2" fill="#D4A574"/>
+    <circle cx="18" cy="-103" r="1.2" fill="#D4A574"/></g>`;
+  return '';
+}
+function renderChestEquipment(id){
+  if(id==='chest_heart') return `<g>
+    <ellipse cx="0" cy="-78" rx="13" ry="13" fill="#E89B9B" opacity="0.25"/>
+    <path d="M 0 -68 L -8 -76 Q -12 -82 -6 -86 Q 0 -88 0 -82 Q 0 -88 6 -86 Q 12 -82 8 -76 Z" fill="url(#heartGlow)" stroke="#A04848" stroke-width="0.5"/>
+    <ellipse cx="-3" cy="-83" rx="1.5" ry="1" fill="#FFE8E8" opacity="0.8"/></g>`;
+  if(id==='chest_gem') return `<g>
+    <circle cx="0" cy="-80" r="14" fill="#7DD3E8" opacity="0.2"/>
+    <polygon points="0,-90 -7,-80 -4,-70 4,-70 7,-80" fill="url(#gemBlue)" stroke="#3D5470" stroke-width="0.5"/>
+    <polygon points="-2,-86 0,-83 2,-86 0,-78" fill="#E0F0FF" opacity="0.9"/>
+    <line x1="-7" y1="-80" x2="7" y2="-80" stroke="#FFFFFF" stroke-width="0.3" opacity="0.5"/></g>`;
+  return '';
+}
+function renderLeftHand(id){
+  if(id==='shield') return `<g>
+    <path d="M -42 -60 L -22 -60 L -22 -42 Q -22 -32 -32 -28 Q -42 -32 -42 -42 Z" fill="url(#bodyAccent)" stroke="#9C5A48" stroke-width="0.8"/>
+    <path d="M -38 -56 L -26 -56 L -26 -44 Q -26 -38 -32 -36 Q -38 -38 -38 -44 Z" fill="#FAF3E5" opacity="0.4"/>
+    <circle cx="-32" cy="-46" r="2.5" fill="url(#goldGrad)"/>
+    <path d="M -32 -48 L -32 -44 M -34 -46 L -30 -46" stroke="#A57848" stroke-width="0.5"/></g>`;
+  return '';
+}
+function renderRightHand(id){
+  if(id==='sword_light') return `<g>
+    <rect x="29" y="-58" width="4" height="8" rx="1" fill="#6B5D4F"/>
+    <rect x="26" y="-58" width="10" height="2" fill="#D4A574"/>
+    <rect x="27" y="-100" width="8" height="42" fill="#7DD3E8" opacity="0.18"/>
+    <rect x="28" y="-100" width="6" height="42" fill="#7DD3E8" opacity="0.4"/>
+    <rect x="30" y="-100" width="2" height="42" fill="#7DD3E8"/>
+    <rect x="30.7" y="-100" width="0.6" height="42" fill="#E8FAFF"/></g>`;
+  if(id==='hammer') return `<g>
+    <rect x="29.5" y="-86" width="3" height="32" fill="#5C3D2A"/>
+    <rect x="22" y="-96" width="18" height="14" rx="2" fill="#A89A8A" stroke="#6B5D4F" stroke-width="0.6"/>
+    <rect x="22" y="-96" width="18" height="3" fill="#6B5D4F"/>
+    <circle cx="25" cy="-89" r="0.8" fill="#6B5D4F"/>
+    <circle cx="37" cy="-89" r="0.8" fill="#6B5D4F"/>
+    <rect x="20" y="-95" width="3" height="12" fill="#6B5D4F"/>
+    <rect x="39" y="-95" width="3" height="12" fill="#6B5D4F"/></g>`;
+  return '';
+}
+
+function thumbHTML(id){
+  const wrap=(inner)=>`<svg viewBox="-30 -40 60 50" xmlns="http://www.w3.org/2000/svg"><defs>${defsBlock()}</defs>${inner}</svg>`;
+  if(id.startsWith('size_')){
+    const s=SIZES.find(x=>x.id===id);
+    const scale=Math.min(0.32,35/(s.meters+5));
+    return wrap(`<g transform="translate(0,5) scale(${scale.toFixed(2)})">
+      <ellipse cx="0" cy="0" rx="22" ry="3" fill="rgba(61,51,40,0.2)"/>
+      <rect x="-12" y="-50" width="24" height="32" rx="4" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+      <rect x="-15" y="-72" width="30" height="22" rx="4" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.6"/>
+      <circle cx="-5" cy="-63" r="2" fill="url(#ledEye)"/>
+      <circle cx="5" cy="-63" r="2" fill="url(#ledEye)"/>
+      <rect x="-9" y="-18" width="7" height="18" rx="2" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.4"/>
+      <rect x="2" y="-18" width="7" height="18" rx="2" fill="url(#bodyMain)" stroke="#6B5D4F" stroke-width="0.4"/></g>
+      <text x="0" y="-30" text-anchor="middle" font-family="Fraunces" font-size="6" font-style="italic" fill="#6B5D4F">${s.meters} m</text>`);
+  }
+  if(id.startsWith('env_')){
+    const skyMap={env_meadow:'skyMeadow',env_garden:'skyGarden',env_forest:'skyForest',env_night:'skyNight',env_space:'skySpace',env_rainbow:'skyRainbow'};
+    const groundMap={env_meadow:'groundGrass',env_garden:'groundGrass',env_forest:'groundDark',env_night:'groundCity',env_space:'groundMoon',env_rainbow:'groundGrass'};
+    let extra='';
+    if(id==='env_meadow') extra=`<circle cx="14" cy="-24" r="4" fill="url(#sunGrad)"/>`;
+    if(id==='env_garden') extra=`<circle cx="14" cy="-25" r="4" fill="url(#sunGrad)"/>`+Array.from({length:5}).map((_,i)=>`<circle cx="${-22+i*9}" cy="-3" r="1.2" fill="${['#E89B9B','#F5CFA8','#B498D0','#F5E4A8','#E89B9B'][i]}"/>`).join('');
+    if(id==='env_forest') extra=`<g transform="translate(-12,0)"><rect x="-1" y="-12" width="2" height="12" fill="#5C3D2A"/><ellipse cx="0" cy="-15" rx="6" ry="8" fill="#7FA37F"/></g><g transform="translate(12,0)"><rect x="-1" y="-10" width="2" height="10" fill="#5C3D2A"/><ellipse cx="0" cy="-13" rx="5" ry="7" fill="#95C295"/></g>`;
+    if(id==='env_night') extra=`<circle cx="14" cy="-25" r="4" fill="url(#moonGrad)"/>`+Array.from({length:8}).map(()=>`<circle cx="${(Math.random()*60-30).toFixed(1)}" cy="${(-30-Math.random()*8).toFixed(1)}" r="0.4" fill="#FFFAEC"/>`).join('');
+    if(id==='env_space') extra=`<circle cx="14" cy="-25" r="3.5" fill="#E8AC7A"/><ellipse cx="14" cy="-25" rx="6" ry="1" fill="none" stroke="#F5CFA8" stroke-width="0.5"/>`+Array.from({length:14}).map(()=>`<circle cx="${(Math.random()*60-30).toFixed(1)}" cy="${(-2-Math.random()*36).toFixed(1)}" r="0.4" fill="#FFFAEC"/>`).join('');
+    if(id==='env_rainbow'){
+      const colors=['#E89B9B','#F5CFA8','#F5E4A8','#95C295','#8FB4D0','#B498D0'];
+      extra=colors.map((c,i)=>`<path d="M ${-30+i} -2 A 30 30 0 0 1 ${30-i} -2" fill="none" stroke="${c}" stroke-width="1.2"/>`).join('');
+    }
+    return wrap(`<rect x="-30" y="-40" width="60" height="40" fill="url(#${skyMap[id]})"/>${extra}<rect x="-30" y="0" width="60" height="10" fill="url(#${groundMap[id]})"/>`);
+  }
+  // EQUIPMENT thumbs
+  if(id==='helm_knight') return wrap(`<g transform="translate(0,-5) scale(0.7)"><path d="M -19 -10 L -19 4 L -10 4 L -10 0 L 10 0 L 10 4 L 19 4 L 19 -10 Q 19 -16 13 -18 L -13 -18 Q -19 -16 -19 -10 Z" fill="#A89A8A" stroke="#6B5D4F" stroke-width="0.8"/><rect x="-12" y="-7" width="24" height="3" fill="#3D3328"/><path d="M 0 -18 L -2 -25 L 2 -25 Z" fill="#E89B9B"/></g>`);
+  if(id==='crown') return wrap(`<g transform="translate(0,-5) scale(0.9)"><path d="M -16 -2 L -16 -8 L -10 -4 L -5 -12 L 0 -4 L 5 -12 L 10 -4 L 16 -8 L 16 -2 Z" fill="url(#goldGrad)" stroke="#A57848" stroke-width="0.6"/><circle cx="-10" cy="-4" r="1.4" fill="#E89B9B"/><circle cx="0" cy="-5" r="1.5" fill="#7DD3E8"/><circle cx="10" cy="-4" r="1.4" fill="#95C295"/></g>`);
+  if(id==='wizard_hat') return wrap(`<g transform="translate(0,5) scale(0.7)"><path d="M -14 0 L 0 -26 L 14 0 Z" fill="#5A4878" stroke="#3D2D55" stroke-width="0.6"/><ellipse cx="0" cy="0" rx="18" ry="2.8" fill="#5A4878"/><path d="M -3 -18 L -2 -16 L 0 -15 L -2 -14 L -3 -12 L -4 -14 L -6 -15 L -4 -16 Z" fill="#F5E4A8"/></g>`);
+  if(id==='visor_cyber') return wrap(`<g transform="translate(0,-8) scale(1.1)"><rect x="-18" y="-4" width="36" height="7" rx="3" fill="#3D3328"/><rect x="-16" y="-3" width="32" height="5" rx="2" fill="#7DD3E8"/><rect x="-14" y="-2" width="6" height="2" fill="#E8FAFF"/></g>`);
+  if(id==='antennas_hi') return wrap(`<g transform="translate(0,5)"><line x1="-9" y1="0" x2="-15" y2="-18" stroke="#6B5D4F" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="0" x2="15" y2="-18" stroke="#6B5D4F" stroke-width="1.5" stroke-linecap="round"/><circle cx="-15" cy="-18" r="3" fill="#7DD3E8"/><circle cx="15" cy="-18" r="3" fill="#E89B9B"/></g>`);
+  if(id==='pauldrons') return wrap(`<g transform="translate(0,-5)"><path d="M -16 -3 Q -16 -10 -6 -10 L 0 -10 Q 0 0 -10 2 Q -16 2 -16 -3 Z" fill="url(#goldGrad)" stroke="#A57848" stroke-width="0.5"/><path d="M 16 -3 Q 16 -10 6 -10 L 0 -10 Q 0 0 10 2 Q 16 2 16 -3 Z" fill="url(#goldGrad)" stroke="#A57848" stroke-width="0.5"/></g>`);
+  if(id==='cape_red') return wrap(`<g transform="translate(0,-5)"><path d="M -16 -16 Q -22 -2 -24 14 Q -22 24 -18 30 L 18 30 Q 22 24 24 14 Q 22 -2 16 -16 Z" fill="#C97862" stroke="#9C5A48" stroke-width="0.7"/><path d="M -16 -16 Q -16 -10 -12 -8 L 12 -8 Q 16 -10 16 -16" fill="#A04848"/></g>`);
+  if(id==='cape_starry') return wrap(`<g transform="translate(0,-5)"><path d="M -16 -16 Q -22 -2 -24 14 Q -22 24 -18 30 L 18 30 Q 22 24 24 14 Q 22 -2 16 -16 Z" fill="#3D2D55"/>${Array.from({length:8}).map(()=>`<circle cx="${(-18+Math.random()*36).toFixed(1)}" cy="${(-12+Math.random()*38).toFixed(1)}" r="0.7" fill="#F5E4A8"/>`).join('')}<circle cx="0" cy="10" r="2" fill="#F5E4A8"/></g>`);
+  if(id==='wings_angel') return wrap(`<g transform="translate(0,-5)"><path d="M 0 0 Q 22 -8 28 8 Q 28 18 18 22 Q 22 30 12 28 Q 6 18 4 5 Z" fill="#FFFAEC" stroke="#D4C8A0" stroke-width="0.5"/><path d="M 0 0 Q -22 -8 -28 8 Q -28 18 -18 22 Q -22 30 -12 28 Q -6 18 -4 5 Z" fill="#FFFAEC" stroke="#D4C8A0" stroke-width="0.5"/></g>`);
+  if(id==='wings_metal') return wrap(`<g transform="translate(0,-5)"><path d="M 0 0 L 22 -4 L 28 4 L 18 8 L 24 14 L 12 16 Z" fill="#A89A8A" stroke="#6B5D4F" stroke-width="0.5"/><path d="M 0 0 L -22 -4 L -28 4 L -18 8 L -24 14 L -12 16 Z" fill="#A89A8A" stroke="#6B5D4F" stroke-width="0.5"/></g>`);
+  if(id==='jetpack') return wrap(`<g transform="translate(0,-5)"><rect x="-13" y="-12" width="26" height="22" rx="2" fill="#A89A8A" stroke="#6B5D4F" stroke-width="0.6"/><rect x="-10" y="-10" width="8" height="16" rx="1" fill="#6B5D4F"/><rect x="2" y="-10" width="8" height="16" rx="1" fill="#6B5D4F"/><circle cx="-6" cy="-6" r="1.2" fill="#E89B9B"/><circle cx="6" cy="-6" r="1.2" fill="#7DD3E8"/><path d="M -10 10 Q -7 18 -6 22 Q -5 18 -2 10 Z" fill="#7DD3E8"/><path d="M 2 10 Q 5 18 6 22 Q 7 18 10 10 Z" fill="#7DD3E8"/></g>`);
+  if(id==='chest_heart') return wrap(`<g transform="translate(0,0) scale(1.4)"><path d="M 0 6 L -8 -2 Q -12 -8 -6 -12 Q 0 -14 0 -8 Q 0 -14 6 -12 Q 12 -8 8 -2 Z" fill="url(#heartGlow)" stroke="#A04848" stroke-width="0.5"/></g>`);
+  if(id==='chest_gem') return wrap(`<g transform="translate(0,0) scale(1.5)"><polygon points="0,-12 -7,-2 -4,8 4,8 7,-2" fill="url(#gemBlue)" stroke="#3D5470" stroke-width="0.4"/><polygon points="-2,-8 0,-5 2,-8 0,0" fill="#E0F0FF" opacity="0.7"/></g>`);
+  if(id==='chest_armor') return wrap(`<g transform="translate(0,-2) scale(0.85)"><path d="M -18 -14 L -18 14 L 18 14 L 18 -14 Q 18 -18 14 -18 L -14 -18 Q -18 -18 -18 -14 Z" fill="#A89A8A" stroke="#6B5D4F" stroke-width="0.7"/><path d="M -14 -8 L -6 -8 L -4 -2 L -6 4 L -14 4 Z" fill="#6B5D4F"/><path d="M 14 -8 L 6 -8 L 4 -2 L 6 4 L 14 4 Z" fill="#6B5D4F"/><line x1="0" y1="-14" x2="0" y2="14" stroke="#6B5D4F" stroke-width="0.6"/></g>`);
+  if(id==='shield') return wrap(`<g transform="translate(0,-3) scale(1.1)"><path d="M -10 -12 L 10 -12 L 10 4 Q 10 12 0 14 Q -10 12 -10 4 Z" fill="url(#bodyAccent)" stroke="#9C5A48" stroke-width="0.7"/><circle cx="0" cy="-1" r="3" fill="url(#goldGrad)"/></g>`);
+  if(id==='sword_light') return wrap(`<g transform="translate(0,5)"><rect x="-1.5" y="-4" width="3" height="6" rx="0.6" fill="#6B5D4F"/><rect x="-4" y="-4" width="8" height="1.5" fill="#D4A574"/><rect x="-1" y="-30" width="2" height="26" fill="#7DD3E8"/><rect x="-2" y="-30" width="4" height="26" fill="#7DD3E8" opacity="0.3"/><rect x="-0.4" y="-30" width="0.8" height="26" fill="#E8FAFF"/></g>`);
+  if(id==='hammer') return wrap(`<g transform="translate(0,3)"><rect x="-1" y="-12" width="2" height="20" fill="#5C3D2A"/><rect x="-9" y="-18" width="18" height="12" rx="1.5" fill="#A89A8A" stroke="#6B5D4F" stroke-width="0.6"/><rect x="-9" y="-18" width="18" height="2.5" fill="#6B5D4F"/><circle cx="-6" cy="-12" r="0.7" fill="#6B5D4F"/><circle cx="6" cy="-12" r="0.7" fill="#6B5D4F"/></g>`);
+  return wrap('');
+}
+
+// Mini robot for the dashboard preview card
+function buildShopPreview(){
+  const robotH = getCurrentSizeMeters();
+  const wH = Math.max(40, robotH*1.2 + 6);
+  const wW = wH * 2.6;
+  const minX = -wW/2;
+  const minY = -wH;
+  const env = robotState.environment;
+  const svg = `<svg viewBox="${minX} ${minY} ${wW} ${wH+4}" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <defs>${defsBlock()}</defs>
+    ${renderSky(env, wW, wH)}
+    ${renderSkyDecor(env, wW, wH)}
+    ${renderFarMountains(env, wW, wH)}
+    ${renderBuildings(env, wW)}
+    ${renderGround(env, wW, 4)}
+    ${renderHumanReference(-wW*0.32)}
+    ${renderRobot(-wW*0.05, robotH)}
+  </svg>`;
+  document.getElementById('shopPreview').innerHTML = svg;
+}
+
+function renderShop(){
+  const sizeGrid = document.getElementById('sizeGrid');
+  sizeGrid.innerHTML = SIZES.map((s,i)=>{
+    const owned = robotState.owned.includes(s.id);
+    const equipped = robotState.size === s.id;
+    const prevOwned = i===0 || robotState.owned.includes(SIZES[i-1].id);
+    const locked = !owned && !prevOwned;
+    return cardHTML(s.id, s.name, s.desc, s.cost, owned, equipped, locked, 'size');
+  }).join('');
+  const slots = ['head','antennas','shoulders','back','chest','leftHand','rightHand'];
+  slots.forEach(slot=>{
+    const grid = document.querySelector(`[data-slot="${slot}"]`);
+    if(!grid) return;
+    const items = EQUIPMENT.filter(e=>e.slot===slot);
+    grid.innerHTML = items.length
+      ? items.map(e=>{
+          const owned = robotState.owned.includes(e.id);
+          const equipped = robotState.equipped[slot] === e.id;
+          return cardHTML(e.id, e.name, e.desc, e.cost, owned, equipped, false, 'equipment');
+        }).join('')
+      : `<div style="color:var(--ink-faint);font-size:13px;padding:8px">Nessun oggetto in questa categoria.</div>`;
+  });
+  const envGrid = document.getElementById('envGrid');
+  envGrid.innerHTML = ENVIRONMENTS.map(e=>{
+    const owned = robotState.owned.includes(e.id);
+    const equipped = robotState.environment === e.id;
+    return cardHTML(e.id, e.name, e.desc, e.cost, owned, equipped, false, 'environment');
+  }).join('');
+  document.querySelectorAll('#officinaView .item-card').forEach(c=>{
+    c.addEventListener('click', ()=>onShopCardClick(c.dataset.id, c.dataset.kind));
+  });
+}
+
+function cardHTML(id, name, desc, cost, owned, equipped, locked, kind){
+  const stars = availableStars();
+  const affordable = cost <= stars;
+  let costPill;
+  if(owned){
+    costPill = `<span class="cost-pill free">Posseduto</span>`;
+  } else if(cost===0){
+    costPill = `<span class="cost-pill free">Gratis</span>`;
+  } else {
+    costPill = `<span class="cost-pill ${affordable?'affordable':'expensive'}">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L 14.5 8.5 L 21.5 9 L 16.2 13.5 L 18 21 L 12 16.8 L 6 21 L 7.8 13.5 L 2.5 9 L 9.5 8.5 Z"/></svg>${cost}</span>`;
+  }
+  let action = '';
+  if(locked) action = `<span class="action-hint">Bloccato</span>`;
+  else if(equipped) action = (kind==='size' || kind==='environment') ? '' : `<span class="action-hint remove">Tocca per togliere</span>`;
+  else if(owned) action = (kind==='size') ? `<span class="action-hint wear">Tocca per scegliere</span>` : (kind==='environment') ? `<span class="action-hint wear">Tocca per attivare</span>` : `<span class="action-hint wear">Tocca per indossare</span>`;
+  else action = `<span class="action-hint buy">${affordable?'Tocca per comprare':'Stelle insufficienti'}</span>`;
+  const cls = ['item-card', owned?'owned':'', equipped?'equipped':'', locked?'locked':''].filter(Boolean).join(' ');
+  return `<div class="${cls}" data-id="${id}" data-kind="${kind}">
+    <div class="item-thumb">${thumbHTML(id)}</div>
+    <div class="item-name">${name}</div>
+    <div class="item-desc">${desc}</div>
+    <div class="item-cost">${costPill}${action}</div>
+  </div>`;
+}
+
+function onShopCardClick(id, kind){
+  if(kind === 'size') return handleSizeClick(id);
+  if(kind === 'environment') return handleEnvClick(id);
+  return handleEquipmentClick(id);
+}
+function handleSizeClick(id){
+  const idx = SIZES.findIndex(s=>s.id===id);
+  if(idx<0) return;
+  const s = SIZES[idx];
+  const prevSize = SIZES.findIndex(x=>x.id===robotState.size);
+  if(!robotState.owned.includes(id)){
+    if(idx>0 && !robotState.owned.includes(SIZES[idx-1].id)){
+      audio.denied();
+      toast('Devi prima sbloccare la statura precedente.');
+      return;
+    }
+    if(s.cost > availableStars()){
+      audio.denied();
+      toast(`Ti servono ancora ${s.cost-availableStars()} stelle.`);
+      return;
+    }
+    robotState.owned.push(id);
+    robotState.spentStars += s.cost;
+    robotState.size = id;
+    saveRobot();
+    audio.purchaseMagic();
+    setTimeout(() => audio.growShrink(idx > prevSize), 250);
+    fireConfetti();
+    toast(`Hai sbloccato: ${s.name}!`);
+  } else {
+    robotState.size = id;
+    saveRobot();
+    audio.growShrink(idx > prevSize);
+    toast(`Statura: ${s.name}.`);
+  }
+  refreshOfficina();
+}
+function handleEnvClick(id){
+  const e = ENVIRONMENTS.find(x=>x.id===id);
+  if(!e) return;
+  if(!robotState.owned.includes(id)){
+    if(e.cost > availableStars()){
+      audio.denied();
+      toast(`Ti servono ancora ${e.cost-availableStars()} stelle.`);
+      return;
+    }
+    robotState.owned.push(id);
+    robotState.spentStars += e.cost;
+    robotState.environment = id;
+    saveRobot();
+    audio.purchaseMagic();
+    setTimeout(() => audio.atmosphere(), 300);
+    fireConfetti();
+    toast(`Mondo sbloccato: ${e.name}!`);
+  } else {
+    robotState.environment = id;
+    saveRobot();
+    audio.atmosphere();
+    toast(`Mondo: ${e.name}.`);
+  }
+  refreshOfficina();
+}
+function handleEquipmentClick(id){
+  const e = EQUIPMENT.find(x=>x.id===id);
+  if(!e) return;
+  const slot = e.slot;
+  if(!robotState.owned.includes(id)){
+    if(e.cost > availableStars()){
+      audio.denied();
+      toast(`Ti servono ancora ${e.cost-availableStars()} stelle.`);
+      return;
+    }
+    robotState.owned.push(id);
+    robotState.spentStars += e.cost;
+    robotState.equipped[slot] = id;
+    saveRobot();
+    audio.purchaseMagic();
+    fireConfetti();
+    toast(`Hai comprato: ${e.name}!`);
+  } else {
+    if(robotState.equipped[slot] === id){
+      robotState.equipped[slot] = null;
+      saveRobot();
+      audio.unequipClick();
+      toast(`Tolto: ${e.name}.`);
+    } else {
+      robotState.equipped[slot] = id;
+      saveRobot();
+      audio.equipClick();
+      toast(`Indossato: ${e.name}.`);
+    }
+  }
+  refreshOfficina();
+}
+
+function refreshOfficina(){
+  document.getElementById('starsAvailable').textContent = availableStars();
+  const counter = document.getElementById('starsCounter');
+  counter.classList.remove('bumping'); void counter.offsetWidth; counter.classList.add('bumping');
+  const sizeM = getCurrentSizeMeters();
+  document.getElementById('sizeBadgeText').textContent = `${sizeM} m`;
+  const envName = (ENVIRONMENTS.find(e=>e.id===robotState.environment)||{}).name || '';
+  document.getElementById('envBadge').textContent = envName;
+  buildScene();
+  renderShop();
+}
+
+function openOfficina(){
+  document.getElementById('dashboardView').style.display = 'none';
+  document.getElementById('officinaView').classList.add('active');
+  audio.openShop();
+  refreshOfficina();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function closeOfficina(){
+  document.getElementById('officinaView').classList.remove('active');
+  document.getElementById('dashboardView').style.display = '';
+  audio.closeShop();
+  renderDashboard();
+}
+
+// ============================================================
+// INIT
+// ============================================================
+function init() {
+  state = loadState();
+  injectGlobalDefs();
+  renderDashboard();
+  document.getElementById('backBtn').addEventListener('click', () => { audio.uiTap(); closeExercise(); });
+  document.getElementById('childPill').addEventListener('click', () => { audio.uiTap(); openSettings(); });
+  document.getElementById('settingsBtn').addEventListener('click', () => { audio.uiTap(); openSettings(); });
+  document.getElementById('saveSettingsBtn').addEventListener('click', saveSettings);
+  document.getElementById('closeSettingsBtn').addEventListener('click', closeSettings);
+  document.getElementById('resetBtn').addEventListener('click', confirmReset);
+  document.getElementById('cancelResetBtn').addEventListener('click', () => {
+    document.getElementById('confirmModal').classList.remove('active');
+  });
+  document.getElementById('confirmResetBtn').addEventListener('click', doReset);
+
+  // Mute toggle
+  function updateMuteIcon() {
+    const ic = document.getElementById('muteIcon');
+    const muted = audio.isMuted();
+    ic.innerHTML = muted
+      ? '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>'
+      : '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>';
+    ic.style.stroke = muted ? '#A89A8A' : '#3D3328';
+  }
+  updateMuteIcon();
+  document.getElementById('muteBtn').addEventListener('click', () => {
+    audio.init();
+    const m = audio.toggleMute();
+    updateMuteIcon();
+    if (!m) audio.uiTap(); // beep di conferma quando si riattiva
+    toast(m ? 'Audio disattivato' : 'Audio attivato');
+  });
+
+  // Officina bindings
+  document.getElementById('openOfficinaBtn').addEventListener('click', openOfficina);
+  document.getElementById('openOfficinaBtn').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openOfficina(); }
+  });
+  document.getElementById('officinaBackBtn').addEventListener('click', () => { audio.uiTap(); closeOfficina(); });
+  document.querySelectorAll('#officinaView .tab-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      audio.tabSwitch();
+      document.querySelectorAll('#officinaView .tab-btn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      const tab = b.dataset.tab;
+      document.querySelectorAll('#officinaView .catalog-section').forEach(s=>{
+        s.classList.toggle('active', s.dataset.section===tab);
+      });
+    });
+  });
+
+  // Click outside modal closes it
+  document.getElementById('settingsModal').addEventListener('click', (e) => {
+    if (e.target.id === 'settingsModal') closeSettings();
+  });
+  document.getElementById('confirmModal').addEventListener('click', (e) => {
+    if (e.target.id === 'confirmModal') document.getElementById('confirmModal').classList.remove('active');
+  });
+  // Keyboard: Esc closes modals
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeSettings();
+      document.getElementById('confirmModal').classList.remove('active');
+    }
+    if (e.key === 'Enter' && document.getElementById('settingsModal').classList.contains('active')) {
+      saveSettings();
+    }
+  });
+  // First-time prompt for name
+  if (!state.childName) {
+    setTimeout(() => openSettings(), 500);
+  }
+}
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
